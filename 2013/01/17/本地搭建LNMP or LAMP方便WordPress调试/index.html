@@ -1,0 +1,631 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="之前一直在另一台VPS各种折腾，数据毁了也不怕，可是你懂得，那速度慢了又慢，操作还不是很方便，突然想到可以在本地测试嘛。Google之，果然可以非常方便的实现。
+严格来说并不是本地LNMP或者LAMP，因为根本用不到Linux，只是搭建一个网站环境方便程序调试罢了。如果说非要LNMP或者LAMP的话，那得用虚拟机了，远没有这个方便快捷。
+目测有两个软件，一个是国外的XAMPP，另一个是国人写的AP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="本地搭建LNMP or LAMP方便WordPress调试">
+<meta property="og:url" content="http://maitaidan.com/2013/01/17/本地搭建LNMP or LAMP方便WordPress调试/index.html">
+<meta property="og:site_name" content="路上">
+<meta property="og:description" content="之前一直在另一台VPS各种折腾，数据毁了也不怕，可是你懂得，那速度慢了又慢，操作还不是很方便，突然想到可以在本地测试嘛。Google之，果然可以非常方便的实现。
+严格来说并不是本地LNMP或者LAMP，因为根本用不到Linux，只是搭建一个网站环境方便程序调试罢了。如果说非要LNMP或者LAMP的话，那得用虚拟机了，远没有这个方便快捷。
+目测有两个软件，一个是国外的XAMPP，另一个是国人写的AP">
+<meta property="og:image" content="http://pic.yupoo.com/jiangxinyu226/CzBrkz92/medish.jpg">
+<meta property="og:image" content="http://blog.s135.com/attachment/201201/apmserv.png">
+<meta property="og:updated_time" content="2016-08-14T13:51:19.315Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="本地搭建LNMP or LAMP方便WordPress调试">
+<meta name="twitter:description" content="之前一直在另一台VPS各种折腾，数据毁了也不怕，可是你懂得，那速度慢了又慢，操作还不是很方便，突然想到可以在本地测试嘛。Google之，果然可以非常方便的实现。
+严格来说并不是本地LNMP或者LAMP，因为根本用不到Linux，只是搭建一个网站环境方便程序调试罢了。如果说非要LNMP或者LAMP的话，那得用虚拟机了，远没有这个方便快捷。
+目测有两个软件，一个是国外的XAMPP，另一个是国人写的AP">
+<meta name="twitter:image" content="http://pic.yupoo.com/jiangxinyu226/CzBrkz92/medish.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://maitaidan.com/2013/01/17/本地搭建LNMP or LAMP方便WordPress调试/"/>
+
+  <title> 本地搭建LNMP or LAMP方便WordPress调试 | 路上 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">路上</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                本地搭建LNMP or LAMP方便WordPress调试
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2013-01-17T23:58:15+08:00" content="2013-01-17">
+              2013-01-17
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2013/01/17/本地搭建LNMP or LAMP方便WordPress调试/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2013/01/17/本地搭建LNMP or LAMP方便WordPress调试/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>之前一直在另一台VPS各种折腾，数据毁了也不怕，可是你懂得，那速度慢了又慢，操作还不是很方便，突然想到可以在本地测试嘛。Google之，果然可以非常方便的实现。</p>
+<p>严格来说并不是本地LNMP或者LAMP，因为根本用不到Linux，只是搭建一个网站环境方便程序调试罢了。如果说非要LNMP或者LAMP的话，那得用虚拟机了，远没有这个方便快捷。</p>
+<p>目测有两个软件，一个是国外的<strong>XAMPP</strong>，另一个是国人写的APMServ，分别介绍下：</p>
+<p>一、XAMPP</p>
+<p>XAMPP 是一个易于安装且包含 MySQL、PHP 和 Perl 的 Apache 发行版。XAMPP 的确非常容易安装和使用：只需下载，解压缩，启动即可。主页：<a href="http://www.apachefriends.org/zh_cn/index.html" target="_blank" rel="external">http://www.apachefriends.org/zh_cn/index.html</a></p>
+<p><img src="http://pic.yupoo.com/jiangxinyu226/CzBrkz92/medish.jpg" alt=""></p>
+<p>XAMPP的安装非常方便，而且支持Windows、Linux、Mac OS X、Solaris四个系统，下载绿色版（<a href="http://www.apachefriends.org/zh_cn/xampp-windows.html" target="_blank" rel="external">http://www.apachefriends.org/zh_cn/xampp-windows.html</a>）<strong>解压到C盘xampp，</strong>运行一下<strong>setup_xampp.bat</strong>即可（不解压到C盘xampp可能导致不能正常运行）。当然也可以下载安装版的，安装版有一个简单的安装过程可以引导~</p>
+<p><strong>①启动</strong>：启动 Apache 和 MySQL：xampp\xampp_start.exe</p>
+<p>停止 Apache 和 MySQL：xampp\xampp_stop.exe</p>
+<p>启动 Apache：xampp\apache_start.bat</p>
+<p>停止 Apache：xampp\apache_stop.bat</p>
+<p>启动 MySQL：xampp\mysql_start.bat</p>
+<p>停止 MySQL：xampp\mysql_stop.bat</p>
+<p>启动 Mercury 邮件服务器：xampp\mercury_start.bat</p>
+<p>设置 FileZilla FTP 服务器：xampp\filezilla_setup.bat</p>
+<p>启动 FileZilla FTP 服务器：xampp\filezilla_start.bat</p>
+<p>停止 FileZilla FTP 服务器：xampp\filezilla_stop.bat</p>
+<p><strong>②安装</strong>WordPress：将你需要的程序安装到xampp根目录下的htdocs中即可~</p>
+<p>如要访问，在浏览器输入<a href="http://localhost即可访问。" target="_blank" rel="external">http://localhost即可访问。</a></p>
+<p><strong>③XAMPP的其它常用路径</strong></p>
+<p>网站根目录的默认路径：xampp\htdocsMYSQL</p>
+<p>数据库默认路径：xampp\mysql\data</p>
+<p><span style="color: #3366ff;"><strong>④附xampp的默认密码</strong></span></p>
+<p>1) MySQL:  User: root   Password:（空）</p>
+<p>2) FileZilla FTP:  User: newuser   Password: wampp</p>
+<p>User: anonymous   Password: some@mail.net</p>
+<p>3) Mercury:Postmaster: postmaster (postmaster@localhost)</p>
+<p>Administrator: Admin (admin@localhost)</p>
+<p>TestUser: newuser   Password: wampp</p>
+<p>4) WEBDAV:User: wampp   Password: xampp</p>
+<p>二、APMServ</p>
+<p>这个是国产的，支持国产！不过貌似很久没更新了，作者比较忙，最新版本是5.2.6,6.0还在开发中~</p>
+<p>主页：<a href="http://apmserv.s135.com/" target="_blank" rel="external">http://apmserv.s135.com/</a> 还有memcached。。。用的是nginx，貌似还支持asp。。可以用这个试一试nexusphp</p>
+<p><img src="http://blog.s135.com/attachment/201201/apmserv.png" alt=""></p>
+<p><strong>软件简介：</strong><br>APMServ 5.2.6 是一款拥有图形界面的快速搭建Apache 2.2.9、PHP 5.2.6、MySQL 5.1.28＆4.0.26、Nginx 0.7.19、Memcached 1.2.4、phpMyAdmin 2.11.9.2、OpenSSL、SQLite、ZendOptimizer，以及ASP、CGI、Perl网站服务器平台的绿色软件。无需安装，具有灵活的移动性，将其拷贝到其它目录、分区或别的电脑时，均只需点击APMServ.exe中的启动按钮，即可自动进行相关设置，将Apache和MySQL安装为系统服务并启动。APMServ集合了Apache稳定安全的优点，并拥有跟IIS一样便捷的图形管理界面，同时支持MySQL 5.0 &amp; 4.0两个版本，虚拟主机、虚拟目录、端口更改、SMTP、上传大小限制、自动全局变量、SSL证书制作、缓存性能优化等设置，只需鼠标一点即可完成。</p>
+<p>1、注意事项：APMServ程序所在路径不能含有汉字和空格。<br>2、MySQL默认用户名：root，密码为空<br>3、MySQL数据库文件存放目录：MySQL5.1\data或MySQL4.0\data<br>4、网站根目录[HTML,PHP]www\htdocs [ASP]www\asp [CGI,Perl]www\cgi-bin<br>5、访问本机请用<a href="http://127.0.0.1/" target="_blank" rel="external">http://127.0.0.1/</a>或<a href="https://127.0.0.1/" target="_blank" rel="external">https://127.0.0.1/</a> (如果开启SSL)<br>6、非默认端口，网址为<a href="http://127.0.0.1/" target="_blank" rel="external">http://127.0.0.1:</a>端口/或<a href="https://127.0.0.1/" target="_blank" rel="external">https://127.0.0.1:</a>端口/<br>7、如果在“扩展功能”中选择使用Memcached，它的端口为：11211<br>8、APMServ集成了以下软件：</p>
+<p>Apache 2.2.9 【HTTP服务器】<br>Nginx 0.7.19 【HTTP服务器】<br>NetBox 2.8 Build 4128 【HTTP服务器＋ASP脚本解释引擎】<br>PHP 5.2.6 【PHP脚本解释引擎】<br>MiniPerl 5.8 【Perl脚本解释器】<br>Memcached 1.2.4 【key-value内存缓存系统】<br>MySQL 5.1.28 【MySQL数据库服务器】<br>MySQL 4.0.26 【MySQL数据库服务器】<br>phpMyAdmin 2.11.9.2 【MySQL数据库在线管理工具】<br>eAccelerator 0.9.5.3 【PHP脚本加速引擎】<br>ZendOptimizer 3.3.3 【PHP脚本加速引擎】<br>OpenSSL 0.9.8h 【HTTPS(SSL)安全传输协议】</p>
+<p>这个我没试过，应该很容易上手，毕竟是国人开放的！大家可以试一下哦。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/01/17/WordPress只能看到一个主题/" rel="next" title="WordPress只能看到一个主题">
+                <i class="fa fa-chevron-left"></i> WordPress只能看到一个主题
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/01/18/破解360doc个人图书馆复制限制/" rel="prev" title="破解360doc个人图书馆复制限制">
+                破解360doc个人图书馆复制限制 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2013/01/17/本地搭建LNMP or LAMP方便WordPress调试/"
+           data-title="本地搭建LNMP or LAMP方便WordPress调试" data-url="http://maitaidan.com/2013/01/17/本地搭建LNMP or LAMP方便WordPress调试/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Crytis" />
+          <p class="site-author-name" itemprop="name">Crytis</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">80</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Crytis</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"crytis"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

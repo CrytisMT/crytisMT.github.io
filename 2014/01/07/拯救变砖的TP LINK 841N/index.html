@@ -1,0 +1,607 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="放假回家了，刚回家几天就有好几件郁闷事！一个是发现多拨竟然失效了！目前只能单拨（继续研究），估计是因为之前10拨太嚣张被封杀了~~ 另一个是家里的电脑被我搞坏了，貌似是掉进去个铁片，短路了，然后2个电容爆掉了。懒得折腾了。
+今天打算继续弄多拨的，寻思给841n刷个固件，就从论坛上下了一个个人制作的，整合了nwan和mwan3。直接在之前的openwrt里升级，升级之后果断变砖！症状就是电脑获取不到">
+<meta property="og:type" content="article">
+<meta property="og:title" content="拯救变砖的TP LINK 841N">
+<meta property="og:url" content="http://maitaidan.com/2014/01/07/拯救变砖的TP LINK 841N/index.html">
+<meta property="og:site_name" content="路上">
+<meta property="og:description" content="放假回家了，刚回家几天就有好几件郁闷事！一个是发现多拨竟然失效了！目前只能单拨（继续研究），估计是因为之前10拨太嚣张被封杀了~~ 另一个是家里的电脑被我搞坏了，貌似是掉进去个铁片，短路了，然后2个电容爆掉了。懒得折腾了。
+今天打算继续弄多拨的，寻思给841n刷个固件，就从论坛上下了一个个人制作的，整合了nwan和mwan3。直接在之前的openwrt里升级，升级之后果断变砖！症状就是电脑获取不到">
+<meta property="og:image" content="http://www.maitaidan.com/wp-content/uploads/2014/01/2-300x296.jpg">
+<meta property="og:image" content="http://www.maitaidan.com/wp-content/uploads/2014/01/QQ截图20140107163833-300x198.png">
+<meta property="og:image" content="http://www.maitaidan.com/wp-content/uploads/2014/01/QQ截图20140107164547-300x201.png">
+<meta property="og:updated_time" content="2016-08-14T13:51:19.330Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="拯救变砖的TP LINK 841N">
+<meta name="twitter:description" content="放假回家了，刚回家几天就有好几件郁闷事！一个是发现多拨竟然失效了！目前只能单拨（继续研究），估计是因为之前10拨太嚣张被封杀了~~ 另一个是家里的电脑被我搞坏了，貌似是掉进去个铁片，短路了，然后2个电容爆掉了。懒得折腾了。
+今天打算继续弄多拨的，寻思给841n刷个固件，就从论坛上下了一个个人制作的，整合了nwan和mwan3。直接在之前的openwrt里升级，升级之后果断变砖！症状就是电脑获取不到">
+<meta name="twitter:image" content="http://www.maitaidan.com/wp-content/uploads/2014/01/2-300x296.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://maitaidan.com/2014/01/07/拯救变砖的TP LINK 841N/"/>
+
+  <title> 拯救变砖的TP LINK 841N | 路上 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">路上</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                拯救变砖的TP LINK 841N
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2014-01-07T16:54:40+08:00" content="2014-01-07">
+              2014-01-07
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2014/01/07/拯救变砖的TP LINK 841N/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2014/01/07/拯救变砖的TP LINK 841N/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>放假回家了，刚回家几天就有好<span style="text-indent: 2em;">几件郁闷事！一个是发现多拨竟然失效了！目前只能单拨（继续研究），估计是因为之前10拨太嚣张被封杀了~~ 另一个是家里的电脑被我搞坏了，貌似是掉进去个铁片，短路了，然后2个电容爆掉了。懒得折腾了。</span></p>
+<p>今天打算继续弄多拨的，寻思给841n刷个固件，就从论坛上下了一个个人制作的，整合了nwan和mwan3。直接在之前的openwrt里升级，升级之后果断变砖！症状就是电脑获取不到IP，IP是169开头的；没有无线；系统灯一直闪。reset无效。</p>
+<p>本来都放弃了，淘宝上买了ttl，准备开拆了。没想到拆到一半卡住了，死活拆不开。又回头搞，竟然搞好了。下面说一下我的步骤，其中的方法可以每个都试一下。</p>
+<p>1.<span style="color: #ff0000;"><strong>（重要）</strong></span>既然获取不了IP，手动设置IP为192.168.1.101，网关192.168.1.1。</p>
+<p>2.这时候发现ping不通，但是在刚接通电源的几秒内可以ping通。网上不少人也是这种现象。</p>
+<p><a href="http://www.maitaidan.com/wp-content/uploads/2014/01/2.jpg" target="_blank" rel="external"><img src="http://www.maitaidan.com/wp-content/uploads/2014/01/2-300x296.jpg" alt="2"></a></p>
+<p>可以有2个办法进安全模式（这个需要固件刷成功，如果刷坏了没有安全模式）：第一种是在通电的几秒钟可以ping通路由器,然后你去按reset. 我试了下死活都没有进去；第二种在通电等全亮后, 在sys灯两的一瞬间按reset<strong>看到sys灯闪烁后</strong>就算成功了。我用第<span style="text-indent: 2em;">二种方</span>法成功了，系统灯闪的很快，而且一直可以ping通。</p>
+<p>3.这时候就可以Ctrl+C停止ping，telnet 192.168.1.1刷固件了。</p>
+<p>下一个HFS，打开HFS把官方固件拖进去。</p>
+<p><a href="http://www.maitaidan.com/wp-content/uploads/2014/01/QQ截图20140107163833.png" target="_blank" rel="external"><img src="http://www.maitaidan.com/wp-content/uploads/2014/01/QQ截图20140107163833-300x198.png" alt=""></a></p>
+<p>开始菜单 运行CMD ，打开dos界面。输入telnet 192.168.1.1，显示用户名密码 输入 root admin 或者自己的密码登陆成功后cd /tmp切换到路由器的 tmp文件夹下，执行<strong> wget <a href="http://192.168.1.101/wr841nv7.bin" target="_blank" rel="external">http://192.168.1.101/wr841nv7.bin</a></strong>（加重为地址是你自己的IP地址和固件文件名）。执行<strong> mtd -r write wr841nv7.bin firmware。</strong>一开始我刷的是原厂固件，但是提示我<strong>Failed to earse block</strong>，换了openwrt的就好了。<span style="text-indent: 2em;">一分钟左右，telnet 丢失主机。路由器自动重启，久违的TP界面就来了。<a href="http://www.maitaidan.com/wp-content/uploads/2014/01/QQ截图20140107164547.png" target="_blank" rel="external"><img src="http://www.maitaidan.com/wp-content/uploads/2014/01/QQ截图20140107164547-300x201.png" alt=""></a></span></p>
+<p>附其它方法：</p>
+<p>1.30/30/30大法：30/30/30 硬复位【即插电稳定后,按复位键不松开30秒 不松开断电30秒 不松开再插电30秒】以下操作将会清除 NVRAM(非易失性存储器)[1]:</p>
+<p>在插上电源后,稳定的情况下，按住复位键不松开30秒。然后，继续不松开复位键，拔掉电源，持续等30秒。最后，还是继续不松开复位键，插上电源，持续再等30秒后, 才松开.松开30秒后进行一次 拔插 电来结束这次 30/30/30 硬复位操作 - 让它正常开机。这些操作应该在每次升级固件之前和之后都做一次。</p>
+<p>2.ttl线刷：这个我还没尝试过，等以后再坏了的吧。</p>
+<p>&nbsp;</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/12/24/更换主题--HotNewspro/" rel="next" title="更换主题--HotNewspro">
+                <i class="fa fa-chevron-left"></i> 更换主题--HotNewspro
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2014/01/08/用路由器有线+无线叠加带宽/" rel="prev" title="用路由器有线+无线叠加带宽">
+                用路由器有线+无线叠加带宽 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2014/01/07/拯救变砖的TP LINK 841N/"
+           data-title="拯救变砖的TP LINK 841N" data-url="http://maitaidan.com/2014/01/07/拯救变砖的TP LINK 841N/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Crytis" />
+          <p class="site-author-name" itemprop="name">Crytis</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">80</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Crytis</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"crytis"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

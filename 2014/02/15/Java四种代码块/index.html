@@ -1,0 +1,616 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="一、普通代码块。在一个普通方法中出现的一段代码。如下：
+public void methodA(){
+   System.out.println(&quot;Hello Java!我是普通代码块中的内容&quot;);//普通代码块
+}
+
+二、静态代码块。       在一个类里面，前面由关键字static开始，在其后由一对大括号包括起来的内容称之为静态代码块。如下：
+public class A{   static">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java四种代码块">
+<meta property="og:url" content="http://maitaidan.com/2014/02/15/Java四种代码块/index.html">
+<meta property="og:site_name" content="路上">
+<meta property="og:description" content="一、普通代码块。在一个普通方法中出现的一段代码。如下：
+public void methodA(){
+   System.out.println(&quot;Hello Java!我是普通代码块中的内容&quot;);//普通代码块
+}
+
+二、静态代码块。       在一个类里面，前面由关键字static开始，在其后由一对大括号包括起来的内容称之为静态代码块。如下：
+public class A{   static">
+<meta property="og:updated_time" content="2016-08-14T13:51:19.333Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java四种代码块">
+<meta name="twitter:description" content="一、普通代码块。在一个普通方法中出现的一段代码。如下：
+public void methodA(){
+   System.out.println(&quot;Hello Java!我是普通代码块中的内容&quot;);//普通代码块
+}
+
+二、静态代码块。       在一个类里面，前面由关键字static开始，在其后由一对大括号包括起来的内容称之为静态代码块。如下：
+public class A{   static">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://maitaidan.com/2014/02/15/Java四种代码块/"/>
+
+  <title> Java四种代码块 | 路上 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">路上</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Java四种代码块
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2014-02-15T14:13:27+08:00" content="2014-02-15">
+              2014-02-15
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2014/02/15/Java四种代码块/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2014/02/15/Java四种代码块/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="一、普通代码块。"><a href="#一、普通代码块。" class="headerlink" title="一、普通代码块。"></a>一、普通代码块。</h2><pre><code>在一个普通方法中出现的一段代码。如下：
+</code></pre><pre class="lang:java decode:true">public void methodA(){
+   System.out.println("Hello Java!我是普通代码块中的内容");//普通代码块
+}</pre>
+
+<h2 id="二、静态代码块。"><a href="#二、静态代码块。" class="headerlink" title="二、静态代码块。"></a>二、静态代码块。</h2><p><span style="text-indent: 2em;">       在一个类里面，前面由关键字static开始，在其后由一对大括号包括起来的内容称之为静态代码块。如下：</span></p>
+<p><pre class="lang:java decode:true">public class A{<br>   static{  //我就是静态代码块<br>      System.out.println(“Hello Java!我是静态代码块中的内容”);<br>   }<br>}</pre><br><span style="color: #333333; font-family: 微软雅黑, Verdana, sans-serif, 宋体; line-height: 23px;">静态代码块，在虚拟机第一次加载该类的时候被执行。主要是对静态属性的初始化，静态代码快只执行一次。</span></p>
+<h2 id="三、构造代码块（非静态代码块）"><a href="#三、构造代码块（非静态代码块）" class="headerlink" title="三、构造代码块（非静态代码块）"></a>三、构造代码块（非静态代码块）</h2><pre><code>在一个类里面，直接由一对大括号包括起来的，没有被任何关键字修饰的代码块被称为构造代码块（也叫非静态代码块），如下：
+</code></pre><p><pre class="lang:java decode:true">public class A{<br>  { //构造代码块<br>    System.out.println(“我是构造代码块，在构造方法调用之前执行”)<br>  }<br>  public A{<br>    System.out.println(“我是构造方法”);<br>  }<br>}</pre><br><span style="color: #333333; font-family: 微软雅黑, Verdana, sans-serif, 宋体; line-height: 23px;">构造代码块在构造方法调用之前被执行，每当创建一个类的实例的时候，构造代码块就会被调用。</span></p>
+<h2 id="四、同步代码块。"><a href="#四、同步代码块。" class="headerlink" title="四、同步代码块。"></a>四、同步代码块。</h2><pre><code>一般使用于多线程环境中。
+</code></pre><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><pre><code>一个对象在创建的时候要经过如下操作
+</code></pre><h3 id="父类静态代码块-gt-子类静态代码块-gt-父类非静态代码块-gt-子类非静态代码块-gt-父类构造方法-gt-子类构造方法"><a href="#父类静态代码块-gt-子类静态代码块-gt-父类非静态代码块-gt-子类非静态代码块-gt-父类构造方法-gt-子类构造方法" class="headerlink" title="     父类静态代码块-&gt;子类静态代码块-&gt;父类非静态代码块-&gt;子类非静态代码块-&gt;父类构造方法-&gt;子类构造方法"></a><span style="padding: 0px; margin: 0px; color: #e53333;">   </span><span style="padding: 0px; margin: 0px; color: #e53333;">  父类静态代码块-&gt;子类静态代码块-&gt;父类非静态代码块-&gt;子类非静态代码块-&gt;父类构造方法-&gt;子类构造方法</span></h3><pre><code>对象的初始化顺序:首先执行父类静态的内容，父类静态的内容执行完毕后，接着去执行子类的静态的内容，当子类的静态内容执行完毕之后，再去看父类有没有非静态代码块，如果有就执行父类的非静态代码块，父类的非静态代码块执行完毕，接着执行父类的构造方法；父类的构造方法执行完毕之后，它接着去看子类有没有非静态代码块，如果有就执行子类的非静态代码块。子类的非静态代码块执行完毕再去执行子类的构造方法。总之一句话，静态代码块内容先执行，接着执行父类非静态代码块和构造方法，然后执行子类非静态代码块和构造方法。
+
+注意:子类的构造方法，不管这个构造方法带不带参数，默认的它都会先去寻找父类的不带参数的构造方法。如果父类没有不带参数的构造方法，那么子类必须用supper关键子来调用父类带参数的构造方法，否则编译不能通过。
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2014/02/10/Java Swing&Swt图形化开发插件/" rel="next" title="Java Swing&Swt图形化开发插件">
+                <i class="fa fa-chevron-left"></i> Java Swing&Swt图形化开发插件
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2014/02/22/蛋疼的阿里巴巴Java笔试题(附分析)/" rel="prev" title="蛋疼的阿里巴巴Java笔试题(附分析)">
+                蛋疼的阿里巴巴Java笔试题(附分析) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2014/02/15/Java四种代码块/"
+           data-title="Java四种代码块" data-url="http://maitaidan.com/2014/02/15/Java四种代码块/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Crytis" />
+          <p class="site-author-name" itemprop="name">Crytis</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">80</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、普通代码块。"><span class="nav-number">1.</span> <span class="nav-text">一、普通代码块。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、静态代码块。"><span class="nav-number">2.</span> <span class="nav-text">二、静态代码块。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、构造代码块（非静态代码块）"><span class="nav-number">3.</span> <span class="nav-text">三、构造代码块（非静态代码块）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、同步代码块。"><span class="nav-number">4.</span> <span class="nav-text">四、同步代码块。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#父类静态代码块-gt-子类静态代码块-gt-父类非静态代码块-gt-子类非静态代码块-gt-父类构造方法-gt-子类构造方法"><span class="nav-number">5.1.</span> <span class="nav-text">     父类静态代码块->子类静态代码块->父类非静态代码块->子类非静态代码块->父类构造方法->子类构造方法</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Crytis</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"crytis"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

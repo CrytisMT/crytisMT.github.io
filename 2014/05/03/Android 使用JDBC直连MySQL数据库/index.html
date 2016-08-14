@@ -1,0 +1,681 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="毕设要在Android里使用MysqL数据库,最简单最直接的方法使用jdbc链接。当然，如果是实际开发中肯定不能这样用，因为会暴露数据库用户名和密码，安全性有很大问题，而且速度什么也是个问题。
+Android里面用jdbc和java里面一样用。网上也有很多文章，但我实际结果总是抛出
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: C">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android 使用JDBC直连MySQL数据库">
+<meta property="og:url" content="http://maitaidan.com/2014/05/03/Android 使用JDBC直连MySQL数据库/index.html">
+<meta property="og:site_name" content="路上">
+<meta property="og:description" content="毕设要在Android里使用MysqL数据库,最简单最直接的方法使用jdbc链接。当然，如果是实际开发中肯定不能这样用，因为会暴露数据库用户名和密码，安全性有很大问题，而且速度什么也是个问题。
+Android里面用jdbc和java里面一样用。网上也有很多文章，但我实际结果总是抛出
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: C">
+<meta property="og:updated_time" content="2016-08-14T13:51:19.354Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android 使用JDBC直连MySQL数据库">
+<meta name="twitter:description" content="毕设要在Android里使用MysqL数据库,最简单最直接的方法使用jdbc链接。当然，如果是实际开发中肯定不能这样用，因为会暴露数据库用户名和密码，安全性有很大问题，而且速度什么也是个问题。
+Android里面用jdbc和java里面一样用。网上也有很多文章，但我实际结果总是抛出
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: C">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://maitaidan.com/2014/05/03/Android 使用JDBC直连MySQL数据库/"/>
+
+  <title> Android 使用JDBC直连MySQL数据库 | 路上 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">路上</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Android 使用JDBC直连MySQL数据库
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2014-05-03T16:45:22+08:00" content="2014-05-03">
+              2014-05-03
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2014/05/03/Android 使用JDBC直连MySQL数据库/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2014/05/03/Android 使用JDBC直连MySQL数据库/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>毕设要在Android里使用MysqL数据库,最简单最直接的方法使用jdbc链接。当然，如果是实际开发中肯定不能这样用，因为会暴露数据库用户名和密码，安全性有很大问题，而且速度什么也是个问题。</p>
+<p>Android里面用jdbc和java里面一样用。网上也有很多文章，但我实际结果总是抛出</p>
+<p><pre class="lang:java decode:true ">com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure</pre><br>这样一个异常。这个并不是什么超时不超时的问题。而是Android在后来的版本中限制了主线程的操作，也就是说主线程不能操作网络等，主线程不能被阻塞。</p>
+<p>解决方法有2个：</p>
+<p>1.强制使用主线程：</p>
+<p>在</p>
+<p><pre class="lang:java decode:true ">setContentView(R.layout.activity_login);</pre><br>后加上这几句：</p>
+<p><pre class="lang:java decode:true ">if (android.os.Build.VERSION.SDK_INT &gt; 9) {<br>    StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()<br>                    .permitAll().build();<br>            StrictMode.setThreadPolicy(policy);<br>        }</pre><br>2.当然是使用其他线程了。简单点的可以用AsyncTask，复杂点的用Handler、线程之类的。</p>
+<p>这里贴一个登录界面验证用户名密码的代码：</p>
+<p><pre class="lang:java decode:true ">import java.sql.ResultSet;<br>import java.sql.SQLException;</pre></p>
+<p>import android.os.AsyncTask;<br>import android.os.Bundle;<br>import android.app.Activity;<br>import android.app.ProgressDialog;<br>import android.content.Intent;<br>import android.view.Menu;<br>import android.view.View;<br>import android.view.View.OnClickListener;<br>import android.widget.Button;<br>import android.widget.EditText;</p>
+<p>public class LoginActivity extends Activity {<br>    private Button logButton;<br>    private EditText username;<br>    private EditText password;<br>    private ProgressDialog dialog;<br>    private String passInDB;</p>
+<pre><code>@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_login);
+
+    dialog = new ProgressDialog(this);
+    dialog.setTitle(&quot;提示信息&quot;);
+    dialog.setMessage(&quot;正在进行,请稍候....&quot;);
+    // EditText
+    username = (EditText) findViewById(R.id.username);
+    password = (EditText) findViewById(R.id.password);
+    // 按钮
+    logButton = (Button) findViewById(R.id.logButton);
+    logButton.setOnClickListener(new OnClickListener() {
+
+        @Override
+        public void onClick(View v) {
+            //获取输入的用户名
+            String user = username.getText().toString();
+            //执行异步任务
+            new getPass().execute(user);
+        }
+    });
+}
+
+class getPass extends AsyncTask&amp;lt;String, Void, String&amp;gt; {
+    @Override
+    protected String doInBackground(String... params) {
+        String pass = null;
+        ConnectDB conDB = new ConnectDB();
+        ResultSet rs = conDB
+                .getQueryResultSet(&quot;select * from user where username=&apos;&quot;
+                        + params[0] + &quot;&apos;&quot;);
+        if (rs != null) {
+            try {
+                rs.next();
+                pass = rs.getObject(&quot;password&quot;).toString();
+            } catch (SQLException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+        return pass;
+    }
+
+    @Override
+    protected void onPreExecute() {
+        dialog.show();
+    }
+    //doInBackground执行完后,onPostExecute被ui线程调用
+    @Override
+    protected void onPostExecute(String result) {
+        // TODO Auto-generated method stub
+        super.onPostExecute(result);
+        passInDB = result;
+        String pass = password.getText().toString();
+        // 判断用户名密码是否正确
+        if (passInDB != null &amp;amp;&amp;amp; pass.equals(passInDB)) {
+            Intent intent = new Intent();
+            intent.setClass(LoginActivity.this, MainTab.class);
+            startActivity(intent);
+            finish();
+        } else {
+            DialogTest.builder(LoginActivity.this, &quot;错误&quot;, &quot;用户名密码错误!&quot;);
+            dialog.cancel();
+        }
+    }
+}
+
+@Override
+public boolean onCreateOptionsMenu(Menu menu) {
+    // Inflate the menu; this adds items to the action bar if it is present.
+    getMenuInflater().inflate(R.menu.main, menu);
+    return true;
+}
+</code></pre><p>}<br><br>使用AsyncTask也就是继承AsyncTask，然后覆写下面几个方法：</p>
+<blockquote>
+<p><span style="color: #333333;"> onPreExecute(), 该方法将在执行实际的后台操作前被UI thread调用。可以在该方法中做一些准备工作，如在界面上显示一个进度条。 </span><br><span style="color: #333333;">　　  doInBackground(Params…), 将在onPreExecute 方法执行后马上执行，该方法运行在后台线程中。这里将主要负责执行那些很耗时的后台计算工作。可以调用 publishProgress方法来更新实时的任务进度。该方法是抽象方法，子类必须实现。 </span><br><span style="color: #333333;">　　 </span><span style="color: #333333;"> onPostExecute(Result), 在doInBackground 执行完成后，onPostExecute 方法将被UI thread调用，后台的计算结果将通过该方法传递到UI thread. </span><br>在主线程新建对象然后执行execute()方法即可。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2014/04/13/Java 判断char是否为汉字/" rel="next" title="Java 判断char是否为汉字">
+                <i class="fa fa-chevron-left"></i> Java 判断char是否为汉字
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2014/05/03/Java实现万年历/" rel="prev" title="Java实现万年历">
+                Java实现万年历 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2014/05/03/Android 使用JDBC直连MySQL数据库/"
+           data-title="Android 使用JDBC直连MySQL数据库" data-url="http://maitaidan.com/2014/05/03/Android 使用JDBC直连MySQL数据库/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Crytis" />
+          <p class="site-author-name" itemprop="name">Crytis</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">80</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Crytis</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"crytis"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,615 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="之前写了①，现在放假了，有时间了，好歹写完了，反正闲着没事，不好虎头蛇尾。非常简易的教程~
+&amp;nbsp;
+好了，现在已经拥有了自己的vps，可以进行下一步了。做网站常见的用lamp（Linux+apache+mysql+php）或者lnmp（Linux+nginx+mysql+php），很多人包括博主习惯用lnmp，因为我根本没用过apache- -。新手自己一个一个安装好麻烦的，推荐军哥的lnm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从零开始VPS建站教程②：安装lnmp及添加虚拟主机">
+<meta property="og:url" content="http://maitaidan.com/2013/02/05/从零开始VPS建站教程②：安装lnmp及添加虚拟主机/index.html">
+<meta property="og:site_name" content="路上">
+<meta property="og:description" content="之前写了①，现在放假了，有时间了，好歹写完了，反正闲着没事，不好虎头蛇尾。非常简易的教程~
+&amp;nbsp;
+好了，现在已经拥有了自己的vps，可以进行下一步了。做网站常见的用lamp（Linux+apache+mysql+php）或者lnmp（Linux+nginx+mysql+php），很多人包括博主习惯用lnmp，因为我根本没用过apache- -。新手自己一个一个安装好麻烦的，推荐军哥的lnm">
+<meta property="og:image" content="http://lnmp.org/images/screenshots/lnmp-install-input-domain.jpg">
+<meta property="og:image" content="http://lnmp.org/images/screenshots/lnmp-install-input-mysql-root-password.jpg">
+<meta property="og:image" content="http://lnmp.org/images/screenshots/lnmp-install-input-mysql-innodb.jpg">
+<meta property="og:image" content="http://lnmp.org/images/screenshots/lnmp-install-press.jpg">
+<meta property="og:image" content="http://lnmp.org/images/screenshots/lnmp-install-success.jpg">
+<meta property="og:image" content="http://lnmp.org/images/screenshots/lnmp-install-failed.jpg">
+<meta property="og:image" content="http://lnmp.org/images/screenshots/lnmp-vhost.jpg">
+<meta property="og:updated_time" content="2016-08-14T13:51:19.323Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="从零开始VPS建站教程②：安装lnmp及添加虚拟主机">
+<meta name="twitter:description" content="之前写了①，现在放假了，有时间了，好歹写完了，反正闲着没事，不好虎头蛇尾。非常简易的教程~
+&amp;nbsp;
+好了，现在已经拥有了自己的vps，可以进行下一步了。做网站常见的用lamp（Linux+apache+mysql+php）或者lnmp（Linux+nginx+mysql+php），很多人包括博主习惯用lnmp，因为我根本没用过apache- -。新手自己一个一个安装好麻烦的，推荐军哥的lnm">
+<meta name="twitter:image" content="http://lnmp.org/images/screenshots/lnmp-install-input-domain.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://maitaidan.com/2013/02/05/从零开始VPS建站教程②：安装lnmp及添加虚拟主机/"/>
+
+  <title> 从零开始VPS建站教程②：安装lnmp及添加虚拟主机 | 路上 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">路上</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                从零开始VPS建站教程②：安装lnmp及添加虚拟主机
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2013-02-05T23:09:21+08:00" content="2013-02-05">
+              2013-02-05
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2013/02/05/从零开始VPS建站教程②：安装lnmp及添加虚拟主机/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2013/02/05/从零开始VPS建站教程②：安装lnmp及添加虚拟主机/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>之前写了①，现在放假了，有时间了，好歹写完了，反正闲着没事，不好虎头蛇尾。非常简易的教程~</p>
+<p>&nbsp;</p>
+<p>好了，现在已经拥有了自己的vps，可以进行下一步了。做网站常见的用lamp（Linux+apache+mysql+php）或者lnmp（Linux+nginx+mysql+php），很多人包括博主习惯用lnmp，因为我根本没用过apache- -。新手自己一个一个安装好麻烦的，推荐军哥的lnmp一键安装包：<a href="http://lnmp.org/install.html" target="_blank" rel="external">http://lnmp.org/install.html</a>。</p>
+<p>好吧，我直接把军哥的教程复制过来吧<span style="color: #ff0000;"><strong>（着重注释下某些地方，容易迷惑的）</strong></span>：</p>
+<h3 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤:"></a>安装步骤:</h3><p><strong>1、使用putty或类似的SSH工具登陆；</strong><br>登陆后运行：<strong>screen -S lnmp</strong><br>如果提示screen命令不存在可以执行：<strong>yum install screen</strong> 或 <strong>apt-get install screen</strong>安装，（screen保障你ssh断了可以继续安装）。</p>
+<p><strong>2、下载LNMP一键安装包：</strong><br>您可以选择使用下载版(推荐国外或者美国VPS使用)或者完整版(推荐国内VPS使用)<br>如需下载版执行命令：<strong>wget -c <a href="http://soft.vpser.net/lnmp/lnmp0.9.tar.gz" target="_blank" rel="external">http://soft.vpser.net/lnmp/lnmp0.9.tar.gz</a></strong><br>如需完整版执行命令：<strong>wget -c <a href="http://soft.vpser.net/lnmp/lnmp0.9-full.tar.gz" target="_blank" rel="external">http://soft.vpser.net/lnmp/lnmp0.9-full.tar.gz</a></strong><br>下载完成后LNMP一键安装包就会被下载到您的服务器或VPS上（一般用root登陆没切换目录的话应该在/root 下面）。</p>
+<p><strong>3、解压LNMP一键安装包：</strong><br>执行：<strong>tar zxvf lnmp0.9.tar.gz</strong> 或 <strong>tar zxvf lnmp0.9-full.tar.gz</strong> 就会将LNMP一键安装包解压缩。</p>
+<p><strong>4、开始安装LNMP一键安装包：</strong><br>进入LNMP安装目录，执行：<strong>cd lnmp0.9/</strong> 或 <strong>cd lnmp0.9-full/</strong><br>再执行安装程序前需要您确认您的Linux发行版，可以执行：<strong>cat /etc/issue</strong> 查看是CentOS、Debian还是Ubuntu，也可以通过VPS服务商提供的控制面板上查看。确定好之后，选择下面对应系统的安装命令：<br><strong>CentOS系统下的安装</strong><br>执行<strong>./centos.sh 2&gt;&amp;1 | tee lnmp.log</strong> (如果系统是Red Hat Enterprise Linux Server(RHEL)需要先确保yum可以正常安装软件,RHEL安装yum教程)<br><strong>Debian系统下的安装</strong><br>执行<strong>./debian.sh 2&gt;&amp;1 | tee lnmp.log</strong><br><strong>Ubuntu系统下的安装</strong><br>执行<strong>./ubuntu.sh 2&gt;&amp;1 | tee lnmp.log</strong><br>执行安装命令后，会出现如下界面：<br><img src="http://lnmp.org/images/screenshots/lnmp-install-input-domain.jpg" alt=""></p>
+<p><span style="color: #ff0000;"><strong>注：这个没啥用可以随便打，之后删除也可以，效果就是在浏览器里输入你绑定的域名，就会访问/home/wwwroot/这个网站根目录下的程序。如果你只有一个网站，完全可以输入你的域名www.<em>**</em></strong>.com，把程序放在/home/wwwroot/就ok啦！**</span><br>输入要绑定的域名(建议使用一个二级域名,该域名会绑定到/home/wwwroot/,方便以后管理！如果输入有错误，可以按住Ctrl再按Backspace键删除)，输入完成后回车，会显示如下界面：<br>(注：如果是Debian系统，输入域名后会提示Where are your servers located? asia,america,europe,oceania or africa，这里是选择服务器或VPS在哪个大洲，一般都是美国VPS，直接回车就行，如果是中国的，输入asia，回车。)<br><img src="http://lnmp.org/images/screenshots/lnmp-install-input-mysql-root-password.jpg" alt=""><br>再输入要设置的MySQL root的密码，输入完成后回车，会显示如下界面：<br><img src="http://lnmp.org/images/screenshots/lnmp-install-input-mysql-innodb.jpg" alt=""></p>
+<p><span style="color: #ff0000;"><strong>注：这个都可以，貌似装上性能会好一点。</strong></span><br>如果需要安装InnoDB，可以输入 y 回车，不需要的话直接回车即可。回车后会显示如下界面：<br><img src="http://lnmp.org/images/screenshots/lnmp-install-press.jpg" alt=""><br>提示”Press any key to start…”，按回车键开始安装。<br>LNMP脚本就会自动安装编译Nginx、MySQL、PHP、phpMyAdmin、Zend Optimizer这几个软件。</p>
+<p><strong>5、安装完成</strong><br>如果显示如下界面：<br><img src="http://lnmp.org/images/screenshots/lnmp-install-success.jpg" alt=""><br>说明已经安装成功。<br>如果显示如下界面：<br><img src="http://lnmp.org/images/screenshots/lnmp-install-failed.jpg" alt=""><br>说明没有安装成功！！</p>
+<p><strong>安装一共大约需要二三十分钟，到这里就安装完毕了，下面可以添加网站了！</strong></p>
+<h3 id="虚拟主机管理"><a href="#虚拟主机管理" class="headerlink" title="虚拟主机管理"></a>虚拟主机管理</h3><p><img src="http://lnmp.org/images/screenshots/lnmp-vhost.jpg" alt=""></p>
+<p>1、添加虚拟主机，执行如下命令：<strong>/root/vhost.sh</strong> 根据提示输入要绑定的域名，回车，如果需要添加更多的域名，输入y，再输入要另外绑定的域名，多个域名可以用空格隔开(注：带www和不带www的是不同的域名，如需带www和不带的www的域名都访问同一个网站需要同时都绑定)。再输入域名绑定的目录(绝对目录，如/home/wwwroot/lnmp，如果不填默认是/home/wwwroot/绑定的域名，目录不一定非要是/home/wwwroot/，如果/data/ 下面有大量的空间也可以填写/data/www/lnmp 之类的。)，再选择是否添加伪静态规则，默认已经有了discuz、discuzx、wordpress、sablog、emlog、dabr、phpwind、wp2(二级目录wp伪静态)，可直接输入以上名称即可，如果需要添加自定义伪静态规则，直接输入一个想要的名字，程序会自动创建伪静态文件，直接在/usr/local/nginx/conf/你自定义的伪静态名字.conf 里面添加伪静态规则就行(注：添加完执行/etc/init.d/nginx restart 重启生效)。接下来会提示是否需要启用日志功能，一般情况下不需要启动，直接输入n就行，如需启动，输入y，再输入要定义的日志文件名字，回车就会自动添加虚拟主机。</p>
+<p><span style="color: #ff0000;"><strong>注：这里图上写的比较详细了，如图可以添加一级域名，二级域名的也可以直接添加，程序放在对应的目录里。</strong></span></p>
+<p><span style="color: #000000;">2、删除虚拟主机，ssh执行：<strong>rm /usr/local/nginx/conf/vhost/域名.conf</strong></span></p>
+<p>到这里基本就配置完了，下面可以配置域名相关的了。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/02/05/不把官网放在第一位的搜索引擎不是好搜索引擎/" rel="next" title="不把官网放在第一位的搜索引擎不是好搜索引擎">
+                <i class="fa fa-chevron-left"></i> 不把官网放在第一位的搜索引擎不是好搜索引擎
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/02/05/从零开始VPS建站教程③：域名&DNS/" rel="prev" title="从零开始VPS建站教程③：域名&DNS">
+                从零开始VPS建站教程③：域名&DNS <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2013/02/05/从零开始VPS建站教程②：安装lnmp及添加虚拟主机/"
+           data-title="从零开始VPS建站教程②：安装lnmp及添加虚拟主机" data-url="http://maitaidan.com/2013/02/05/从零开始VPS建站教程②：安装lnmp及添加虚拟主机/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Crytis" />
+          <p class="site-author-name" itemprop="name">Crytis</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">80</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装步骤"><span class="nav-number">1.</span> <span class="nav-text">安装步骤:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#虚拟主机管理"><span class="nav-number">2.</span> <span class="nav-text">虚拟主机管理</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Crytis</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"crytis"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
