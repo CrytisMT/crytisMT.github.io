@@ -286,46 +286,15 @@
       
         
           
-            <p>之前一直在另一台VPS各种折腾，数据毁了也不怕，可是你懂得，那速度慢了又慢，操作还不是很方便，突然想到可以在本地测试嘛。Google之，果然可以非常方便的实现。</p>
-<p>严格来说并不是本地LNMP或者LAMP，因为根本用不到Linux，只是搭建一个网站环境方便程序调试罢了。如果说非要LNMP或者LAMP的话，那得用虚拟机了，远没有这个方便快捷。</p>
-<p>目测有两个软件，一个是国外的<strong>XAMPP</strong>，另一个是国人写的APMServ，分别介绍下：</p>
-<p>一、XAMPP</p>
-<p>XAMPP 是一个易于安装且包含 MySQL、PHP 和 Perl 的 Apache 发行版。XAMPP 的确非常容易安装和使用：只需下载，解压缩，启动即可。主页：<a href="http://www.apachefriends.org/zh_cn/index.html" target="_blank" rel="external">http://www.apachefriends.org/zh_cn/index.html</a></p>
-<p><img src="http://pic.yupoo.com/jiangxinyu226/CzBrkz92/medish.jpg" alt=""></p>
-<p>XAMPP的安装非常方便，而且支持Windows、Linux、Mac OS X、Solaris四个系统，下载绿色版（<a href="http://www.apachefriends.org/zh_cn/xampp-windows.html" target="_blank" rel="external">http://www.apachefriends.org/zh_cn/xampp-windows.html</a>）<strong>解压到C盘xampp，</strong>运行一下<strong>setup_xampp.bat</strong>即可（不解压到C盘xampp可能导致不能正常运行）。当然也可以下载安装版的，安装版有一个简单的安装过程可以引导~</p>
-<p><strong>①启动</strong>：启动 Apache 和 MySQL：xampp\xampp_start.exe</p>
-<p>停止 Apache 和 MySQL：xampp\xampp_stop.exe</p>
-<p>启动 Apache：xampp\apache_start.bat</p>
-<p>停止 Apache：xampp\apache_stop.bat</p>
-<p>启动 MySQL：xampp\mysql_start.bat</p>
-<p>停止 MySQL：xampp\mysql_stop.bat</p>
-<p>启动 Mercury 邮件服务器：xampp\mercury_start.bat</p>
-<p>设置 FileZilla FTP 服务器：xampp\filezilla_setup.bat</p>
-<p>启动 FileZilla FTP 服务器：xampp\filezilla_start.bat</p>
-<p>停止 FileZilla FTP 服务器：xampp\filezilla_stop.bat</p>
-<p><strong>②安装</strong>WordPress：将你需要的程序安装到xampp根目录下的htdocs中即可~</p>
-<p>如要访问，在浏览器输入<a href="http://localhost即可访问。" target="_blank" rel="external">http://localhost即可访问。</a></p>
-<p><strong>③XAMPP的其它常用路径</strong></p>
-<p>网站根目录的默认路径：xampp\htdocsMYSQL</p>
-<p>数据库默认路径：xampp\mysql\data</p>
-<p><span style="color: #3366ff;"><strong>④附xampp的默认密码</strong></span></p>
-<p>1) MySQL:  User: root   Password:（空）</p>
-<p>2) FileZilla FTP:  User: newuser   Password: wampp</p>
-<p>User: anonymous   Password: some@mail.net</p>
-<p>3) Mercury:Postmaster: postmaster (postmaster@localhost)</p>
-<p>Administrator: Admin (admin@localhost)</p>
-<p>TestUser: newuser   Password: wampp</p>
-<p>4) WEBDAV:User: wampp   Password: xampp</p>
-<p>二、APMServ</p>
-<p>这个是国产的，支持国产！不过貌似很久没更新了，作者比较忙，最新版本是5.2.6,6.0还在开发中~</p>
-<p>主页：<a href="http://apmserv.s135.com/" target="_blank" rel="external">http://apmserv.s135.com/</a> 还有memcached。。。用的是nginx，貌似还支持asp。。可以用这个试一试nexusphp</p>
-<p><img src="http://blog.s135.com/attachment/201201/apmserv.png" alt=""></p>
-<p><strong>软件简介：</strong><br>APMServ 5.2.6 是一款拥有图形界面的快速搭建Apache 2.2.9、PHP 5.2.6、MySQL 5.1.28＆4.0.26、Nginx 0.7.19、Memcached 1.2.4、phpMyAdmin 2.11.9.2、OpenSSL、SQLite、ZendOptimizer，以及ASP、CGI、Perl网站服务器平台的绿色软件。无需安装，具有灵活的移动性，将其拷贝到其它目录、分区或别的电脑时，均只需点击APMServ.exe中的启动按钮，即可自动进行相关设置，将Apache和MySQL安装为系统服务并启动。APMServ集合了Apache稳定安全的优点，并拥有跟IIS一样便捷的图形管理界面，同时支持MySQL 5.0 &amp; 4.0两个版本，虚拟主机、虚拟目录、端口更改、SMTP、上传大小限制、自动全局变量、SSL证书制作、缓存性能优化等设置，只需鼠标一点即可完成。</p>
-<p>1、注意事项：APMServ程序所在路径不能含有汉字和空格。<br>2、MySQL默认用户名：root，密码为空<br>3、MySQL数据库文件存放目录：MySQL5.1\data或MySQL4.0\data<br>4、网站根目录[HTML,PHP]www\htdocs [ASP]www\asp [CGI,Perl]www\cgi-bin<br>5、访问本机请用<a href="http://127.0.0.1/" target="_blank" rel="external">http://127.0.0.1/</a>或<a href="https://127.0.0.1/" target="_blank" rel="external">https://127.0.0.1/</a> (如果开启SSL)<br>6、非默认端口，网址为<a href="http://127.0.0.1/" target="_blank" rel="external">http://127.0.0.1:</a>端口/或<a href="https://127.0.0.1/" target="_blank" rel="external">https://127.0.0.1:</a>端口/<br>7、如果在“扩展功能”中选择使用Memcached，它的端口为：11211<br>8、APMServ集成了以下软件：</p>
-<p>Apache 2.2.9 【HTTP服务器】<br>Nginx 0.7.19 【HTTP服务器】<br>NetBox 2.8 Build 4128 【HTTP服务器＋ASP脚本解释引擎】<br>PHP 5.2.6 【PHP脚本解释引擎】<br>MiniPerl 5.8 【Perl脚本解释器】<br>Memcached 1.2.4 【key-value内存缓存系统】<br>MySQL 5.1.28 【MySQL数据库服务器】<br>MySQL 4.0.26 【MySQL数据库服务器】<br>phpMyAdmin 2.11.9.2 【MySQL数据库在线管理工具】<br>eAccelerator 0.9.5.3 【PHP脚本加速引擎】<br>ZendOptimizer 3.3.3 【PHP脚本加速引擎】<br>OpenSSL 0.9.8h 【HTTPS(SSL)安全传输协议】</p>
-<p>这个我没试过，应该很容易上手，毕竟是国人开放的！大家可以试一下哦。</p>
+          之前一直在另一台VPS各种折腾，数据毁了也不怕，可是你懂得，那速度慢了又慢，操作还不是很方便，突然想到可以在本地测试嘛。Google之，果然可以非常方便的实现。
+严格来说并不是本地LNMP或者LAMP，因为根本用不到Linux，只是搭建一个网站环境方便程序调试罢了。如果说非要LNMP或者LAMP的话
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2013/01/17/本地搭建LNMP or LAMP方便WordPress调试/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -424,12 +393,16 @@
       
         
           
-            <p>如果打开主题选项，发现只能看到现在在用的这个主题，其他装的完全看不到，安装时候还提示“已安装”，你不妨也试试下面的方法：</p>
-<p>编辑<strong>/usr/local/php/etc/php.ini</strong>，搜索<strong>scandir</strong><span style="color: #000000;">，删除即可（即删除禁用scandir函数）。删除之后就可以看到所有主题了，还能检测到主题升级！</span></p>
-<p>别忘了重启一下PHP-FPM：</p>
-<p><pre class="lang:default decode:true">/etc/init.d/php-fpm restart</pre><br>PHP解释scandir功能是Returns an array of files and directories from the directory.之前装的lnmp是可以正常显示的，貌似是PHP5.4之后默认禁用了。</p>
+          如果打开主题选项，发现只能看到现在在用的这个主题，其他装的完全看不到，安装时候还提示“已安装”，你不妨也试试下面的方法：
+编辑/usr/local/php/etc/php.ini，搜索scandir，删除即可（即删除禁用scandir函数）。删除之后就可以看到所有主题了，还能检测到主题升级！
+别忘了
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2013/01/17/WordPress只能看到一个主题/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -528,14 +501,17 @@
       
         
           
-            <p>考试终于考完了，有时间捣鼓一下博客了~</p>
-<p>教育网有个很大的好处就是ipv6~给博客开启ipv6访问最起码自己能用到嘛。</p>
-<p>nginx开启ipv6首先需要有ipv6的模块，编译nginx时加上-with ipv6，在dns里添加AAAA记录指向ip地址即可。关键是在配置虚拟机文件。</p>
-<p>很多人说conf文件要改成这种形式：</p>
-<p><pre class="lang:default decode:true ">listen 80;    #此处监听所有ipv4地址<br>listen [::]:80;    #此处监听所有ipv6地址</pre><br>但我自己改过之后，重启nginx提示错误，大体意思是ip地址重复。。。。。发现添加上具体ip就可以了，如下所示：</p>
-<p><pre class="lang:default decode:true ">listen ip:80;    #此处监听所有ipv4地址<br>listen [ipv6的地址]:80;    #此处监听所有ipv6地址</pre><br>&nbsp;</p>
+          考试终于考完了，有时间捣鼓一下博客了~
+教育网有个很大的好处就是ipv6~给博客开启ipv6访问最起码自己能用到嘛。
+nginx开启ipv6首先需要有ipv6的模块，编译nginx时加上-with ipv6，在dns里添加AAAA记录指向ip地址即可。关键是在配置虚拟机文件。
+很多人说conf文件要
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2013/01/12/关于nginx网站IPV6配置的一点心得/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -634,13 +610,16 @@
       
         
           
-            <p>最近这段时间进入考试期了，天天做自习室不说，考试一门接一门。考试一门接一门不说，还得熬夜到两三点，考了几门，好不容易有个简单点的计算机网络，题出的又郁闷，更别提什么鸟编译原理了~</p>
-<p>擦，听说新来的校长下令考试卷子不能跟前三年有30%以上雷同。我会说我在心里已经问候过你十八代祖宗一遍了吗？！</p>
-<p>今天又考一科，题量巨大啊，考完了都垂头丧气。</p>
-<p>洗洗睡了，还有2科学分无比多的~</p>
-<p>次奥。</p>
+          最近这段时间进入考试期了，天天做自习室不说，考试一门接一门。考试一门接一门不说，还得熬夜到两三点，考了几门，好不容易有个简单点的计算机网络，题出的又郁闷，更别提什么鸟编译原理了~
+擦，听说新来的校长下令考试卷子不能跟前三年有30%以上雷同。我会说我在心里已经问候过你十八代祖宗一遍了吗？！
+今天又考一
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2013/01/09/这大三的考试真遭罪啊/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -739,20 +718,16 @@
       
         
           
-            <p>昨天有个在hostloc上送了一堆阿里云68元代金券。阿里云VPS最低价格69，就花了一块钱去体验下，还打算混个备案，结果真是令人失望呀。</p>
-<p>阿里云注册需用手机验证码~估计是一个人只能用一个吧，不得不说阿里云的服务还是不错的，改密码、重启啥的都发条短信，甚至验证码，有点繁琐。</p>
-<p>付完款很快就开通了，我选的是最低配，512MB，1Mbps上行，青岛节点。</p>
-<p>先说下网络，ssh的速度还是不错的，学校里的延迟在六七十左右，不知咋回事有点丢包。下载速度呢，国内能到8、9MB/s，升级PHP每秒十几K，这个悲催啊；上行1Mbps，每加1Mbps要10块钱吧好像，贵就一个字，访问速度很一般，可能国内现状就这样吧。</p>
-<p><img src="http://pic.yupoo.com/jiangxinyu226/Cx6yYNde/medish.jpg" alt=""></p>
-<p>性能。I/O啊，有点悲剧，上个图吧。LNMP我也不知道编译了多久，没算。</p>
-<p><img src="http://pic.yupoo.com/jiangxinyu226/Cx6yYSN4/medish.jpg" alt=""></p>
-<p>最让我郁闷的是非让备案。本来把博客副本搬到了阿里云，尝试了一下备案，好麻烦，果断放弃~睡了一觉，第二天一早网站就成这样了：</p>
-<p><img src="http://pic.yupoo.com/jiangxinyu226/Cx6rAKKq/medish.jpg" alt=""></p>
-<p>唉，果断放弃吧，还是回美国VPS吧，阿里云速度一般，在用的几个美国VPS也差不了多少。</p>
-<p>ps 阿里云试用万智备案的，接入商根本都没阿里巴巴~</p>
-<p>总之呢，阿里云服务不错，性价比跟国外的还有差距，备案是个大问题~还是老老实实用美日的VPS吧。</p>
+          昨天有个在hostloc上送了一堆阿里云68元代金券。阿里云VPS最低价格69，就花了一块钱去体验下，还打算混个备案，结果真是令人失望呀。
+阿里云注册需用手机验证码~估计是一个人只能用一个吧，不得不说阿里云的服务还是不错的，改密码、重启啥的都发条短信，甚至验证码，有点繁琐。
+付完款很快就开通了，我选
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2013/01/01/吐槽一下阿里云/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -851,51 +826,16 @@
       
         
           
-            <p>看来除了前两个加飞机场和试验田的，就我们学校最大了啊~不过盲目的扩大反倒使教师和学生的素质与质量有所下降，盲目的扩大招生使学校人满为患。不过这应该也是吉大无奈于吉林省之举。</p>
-<p>1 中国民航飞行学院11640000平方米（17460亩） (外加5个飞机场)</p>
-<p><a href="http://www.cafuc.edu.cn/structure/index" target="_blank" rel="external">http://www.cafuc.edu.cn/structure/index</a></p>
-<p>1956年初, 中国民用航空局航空学校在四川成立。学院在四川新津、广汉、绵阳和河南省洛阳市设有4个副司局级的飞行训练分院以及所属的5个设施完备的、供飞行教学训练使用的机场。众所周知，飞机很大，飞机跑道也很长，飞机场也就很大了，这五个机场是属于中国民航飞行学院的，因此其当之无愧的是中国第一大大学。</p>
-<p>2 江西农业大学 11042208平方米（16563亩）(外加试验田)</p>
-<p><a href="http://www.jxau.edu.cn/index.htm" target="_blank" rel="external">http://www.jxau.edu.cn/index.htm</a></p>
-<p>江西是一个农业大省，而且江西地广人稀，江西农业大学成为第二大高校貌似很正常。</p>
-<p><strong> 3 吉林大学 7210000平方米（10815亩</strong>）</p>
-<p><a href="http://www.jlu.edu.cn/" target="_blank" rel="external">http://www.jlu.edu.cn</a></p>
-<p>吉林大学于2000年6月12日由原吉林大学、吉林工业大学、白求恩医科大学、长春科技大学、长春邮电学院合并组建而成。五所大学的组合当然很大了。 校舍建筑面积近328万平方米。校园大了，学生住的也舒服啊。</p>
-<p>4 中山大学 6170000平方米（9255亩）</p>
-<p><a href="http://www.sysu.edu.cn/" target="_blank" rel="external">http://www.sysu.edu.cn</a></p>
-<p>中山大学现有四个校区，总面积达6.17平方公里，分别座落在珠江之畔、南海之滨。广州南校区占地1.17平方公里，北校区占地0.39平方公里，广州东校区占地1.13平方公里，珠海校区占地3.48平方公里。中山大学，国父先生手创的中国名校大的有道理。</p>
-<p>5 华南农业大学 5500000平方米（8250亩）(外加试验田)</p>
-<p><a href="http://www.scau.edu.cn/" target="_blank" rel="external">http://www.scau.edu.cn/</a></p>
-<p>6 华中农业大学 4950000平方米（7425亩）(外加试验田)</p>
-<p><a href="http://www.hzau.edu.cn/" target="_blank" rel="external">http://www.hzau.edu.cn/</a>华南、华中两座农业大学在试验田的支持下一举拿下了第五第六的宝座。</p>
-<p>7 四川大学 4700000平方米（7050亩）</p>
-<p><a href="http://www.scu.edu.cn/" target="_blank" rel="external">http://www.scu.edu.cn/</a></p>
-<p>由原四川大学、原成都科技大学、原华西医科大学三所全国重点大学于1994年4月和2000年9月两次“强强合并”组建而成。四川人多，当然学校就大了。</p>
-<p>8 华中科技大学 4520000平方米（6780亩）</p>
-<p><a href="http://www.hust.edu.cn/" target="_blank" rel="external">http://www.hust.edu.cn/</a></p>
-<p>华中科技大学是国家教育部直属的全国重点大学，由原华中理工大学、原同济医科大学、原武汉城市建设学院和科技部干部管理学院于2000年5月26日合并成立。四大学院的出手不同凡响啊。</p>
-<p>9 清华大学 3560000平方米（5340亩）</p>
-<p><a href="http://www.tsinghua.edu.cn/" target="_blank" rel="external">http://www.tsinghua.edu.cn/</a></p>
-<p>清华大学的前身是清华学堂，始建于1911年，1912年更名为清华学校。不说了，中国第一的大学，如果没有，清华的学生、教授会拿豆腐砸死我的。</p>
-<p>10 塔里木大学 3502760平方米（5254亩）(外加试验田)</p>
-<p><a href="http://www.taru.edu.cn/" target="_blank" rel="external">http://www.taru.edu.cn/</a></p>
-<p>新疆太大了，塔里木大学校园面积就2500亩，校舍建筑面积也有35万平方米，再加上试验田，呵呵太大了。</p>
-<p>11 哈尔滨工业大学 3430000平方米（5145亩）</p>
-<p><a href="http://www.hit.edu.cn/" target="_blank" rel="external">http://www.hit.edu.cn/</a></p>
-<p>哈工大还是国际宇航大学（ISU）在亚洲唯一的一所常设分校。一所理工为主，理、工、管、文、经、法结合的高等学府。</p>
-<p>12武汉大学 3453300平方米（5168亩）</p>
-<p><a href="http://www.whu.edu.cn/" target="_blank" rel="external">http://www.whu.edu.cn/</a></p>
-<p>武汉大学的历史溯源于1893年清末湖广总督张之洞奏请清政府创办的自强学堂，历经传承演变，1928年定名为国立武汉大学，是近代中国第一批国立综合性大学。其校园环境优美，风景如画，被誉为“世界上最美丽的大学之一”。学校占地面积 5168 亩，建筑面积 249 万平方米。</p>
-<p>13福州大学 3400000平方米（5100亩）</p>
-<p><a href="http://www.fzu.edu.cn/" target="_blank" rel="external">http://www.fzu.edu.cn/</a></p>
-<p>创建于1958年，但在北方好象并不出名啊</p>
-<p>14 武汉理工大学 3333000平方米（5000亩）</p>
-<p><a href="http://www.whut.edu.cn/index.html" target="_blank" rel="external">http://www.whut.edu.cn/index.html</a>学校位于“九省通衢”的武汉市，环境优美,占地面积4500余亩，其中一个占地1769亩的南湖新校区正在建设中。所以排名有望上升四个排名。可以顶一下。</p>
-<p>15 浙江大学 3130000平方米（4695亩）</p>
-<p><a href="http://www.zju.edu.cn/" target="_blank" rel="external">http://www.zju.edu.cn/</a></p>
-<p>浙江大学是一所具有悠久历史的全国重点大学，前身求是书院成立于1897年，为中国人自己创办最早的高等学府之一。20世纪50年代初期在全国高等院校调整时，曾被分为多所单科性学校，其中在杭的四所学校，即浙江大学、杭州大学、浙江农业大学、浙江医科大学于1998年9月重新合并，组建为今日的浙江大学。偶一直向往啊，好多杭州mm啊。</p>
+          看来除了前两个加飞机场和试验田的，就我们学校最大了啊~不过盲目的扩大反倒使教师和学生的素质与质量有所下降，盲目的扩大招生使学校人满为患。不过这应该也是吉大无奈于吉林省之举。
+1 中国民航飞行学院11640000平方米（17460亩） (外加5个飞机场)
+http://www.cafuc.edu.cn
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2012/12/29/全国大学占地面积大比拼/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -994,22 +934,17 @@
       
         
           
-            <p>码盲啊，代码就是看不懂，正好这个寒假可以了解一下PHP、javascript等方面的书，要原创质量才上的去~！</p>
-<p>无意中发现最后一个分页打不开，提示404错误。其他分页正常，好奇怪哦！</p>
-<p><img src="http://pic.yupoo.com/jiangxinyu226/CwzH2C9y/medish.jpg" alt=""></p>
-<p>网上朋友分析重写的问题，改了也没解决。无意中发现了一篇文章，试过之后问题解决了！感觉这个问题是倡萌主题都有的~十分感谢苏说博客！</p>
-<p>先转载过来了~直接说方法了。</p>
-<p>打开目录下wp-includes\class-wp.php 这个文件，要找到function handle_404()这个函数，原代码如下：</p>
-<p><pre class="lang:default decode:true">function handle_404() {<br>global $wp_query;</pre></p>
-<p>// If we’ve already issued a 404, bail.<br>if ( is_404() )<br>return;</p>
-<p>// Never 404 for the admin, robots, or if we found posts.<br>if ( is_admin() || is_robots() || $wp_query-&gt;posts ) {<br>status_header( 200 );<br>return;<br>}</p>
-<p>// We will 404 for paged queries, as no posts were found.<br>if ( ! is_paged() ) {</p>
-<p>// Don’t 404 for these queries if they matched an object.<br>if ( ( is_tag() || is_category() || is_tax() || is_author() || is_post_type_archive() ) &amp;&amp; $wp_query-&gt;get_queried_object() ) {<br>status_header( 200 );<br>return;<br>}</p>
-<p>// Don’t 404 for these queries either.<br>if ( is_home() || is_search() ) {<br>status_header( 200 );<br>return;<br>}<br>}</p>
-<p>// Guess it’s time to 404.<br>$wp_query-&gt;set_404();<br>status_header( 404 );<br>nocache_headers();<br>}<br><span style="color: #ff0000;"><strong>将其替换为如下代码并删除 &amp;&amp; !is_paged()  注意备份</strong></span>：</p>
-<p><pre class="lang:default decode:true">function handle_404() {<br>global $wp_query;<br>if ( !is_admin() &amp;&amp; ( 0 == count( $wp_query-&gt;posts ) ) &amp;&amp; !is_404() &amp;&amp; !is_robots() &amp;&amp; !is_search() &amp;&amp; !is_home() ) {<br>// Don’t 404 for these queries if they matched an object.<br>if ( ( is_tag() || is_category() || is_tax() || is_author() ) &amp;&amp; $wp_query-&gt;get_queried_object() &amp;&amp; !is_paged() ) {<br>if ( !is_404() )<br>status_header( 200 );<br>return;<br>}<br>$wp_query-&gt;set_404();<br>status_header( 404 );<br>nocache_headers();<br>} elseif ( !is_404() ) {<br>status_header( 200 );<br>}<br>}</pre><br>问题解决了~</p>
+          码盲啊，代码就是看不懂，正好这个寒假可以了解一下PHP、javascript等方面的书，要原创质量才上的去~！
+无意中发现最后一个分页打不开，提示404错误。其他分页正常，好奇怪哦！
 
-          
+网上朋友分析重写的问题，改了也没解决。无意中发现了一篇文章，试过之后问题解决了！感觉这个问题是倡萌主题都有的~十分
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2012/12/29/WordPress最后一个分页404的解决/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1108,35 +1043,15 @@
       
         
           
-            <p>今天博客搬了家，打开wordpress和phpmyadmin后显示不全，一大片空白，只剩下文字，就像网速非常慢的样子，而且phpmyadmin不能登录，输入完用户名密码之后直接跳到博客首页~</p>
-<p>分析了一下，Wordpress显示不全应该是wp super cache插件的问题，因为搬家后改了网站的路径。果断停止卸载，Wordpress恢复正常。</p>
-<p>phpmyadmin的问题，感觉跟伪静态什么的有关系，也不太明白。想起来在编译lnmp是开启了伪静态并且选择了wordpress。遂修改nginx的配置文件。</p>
-<p><pre class="lang:default decode:true">server<br>    {<br>        listen       80;<br>        server_name www.maitaidan.com maitaidan.com maitaidan.info www.maitaidan.info;<br>        index index.html index.htm index.php default.html default.htm default.php;<br>        root  /home/wwwroot/maitaidan;</pre></p>
-<pre><code>    include wordpress.conf;
-    location ~ .*\.(php|php5)?$
-        {
-            try_files $uri =404;
-            fastcgi_pass  unix:/tmp/php-cgi.sock;
-            fastcgi_index index.php;
-            include fcgi.conf;
-        }
+          今天博客搬了家，打开wordpress和phpmyadmin后显示不全，一大片空白，只剩下文字，就像网速非常慢的样子，而且phpmyadmin不能登录，输入完用户名密码之后直接跳到博客首页~
+分析了一下，Wordpress显示不全应该是wp super cache插件的问题，因为搬家后改了网站的路径
+          ...
 
-    location ~ .*\.(gif|jpg|jpeg|png|bmp|swf)$
-        {
-            expires      30d;
-        }
-
-    location ~ .*\.(js|css)?$
-        {
-            expires      12h;
-        }
-
-    access_log off;
-}&lt;/pre&gt;
-</code></pre><p>这是有问题的，可以看到其中有一句include wordpress.conf，果断删掉~为了还能实现固定链接不出现404，再加上如下语句：</p>
-<p><pre class="lang:default decode:true">if (!-e $request_filename) {<br>rewrite ^([_0-9a-zA-Z-]+)?(/wp-.<em>) $2 last;<br>rewrite ^([_0-9a-zA-Z-]+)?(/.</em>.php)$ $2 last;<br>rewrite ^ /index.php last;<br>}</pre><br>具体的请看这里<a href="http://www.maitaidan.com/archives/43.html" title="WordPress永久链接实现方法及去掉链接中的index.php" target="_blank" rel="external">WordPress永久链接实现方法及去掉链接中的index.php</a></p>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2012/12/27/phpmyadmin登陆后跳到首页&显示错误的解决/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1235,12 +1150,18 @@
       
         
           
-            <p>这个问题网上有很多了，我权当记录一下了~</p>
-<p>原因是跑PHP进程的用户名和WP文件夹的所有者不同。</p>
-<p>进入WordPress目录，运行：</p>
-<p><pre class="lang:default decode:true">chown -R www *</pre><br>所有者改为www搞定。<br>&nbsp;</p>
+          这个问题网上有很多了，我权当记录一下了~
+原因是跑PHP进程的用户名和WP文件夹的所有者不同。
+进入WordPress目录，运行：
+chown -R www *所有者改为www搞定。&nbsp;
 
           
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2012/12/27/无需输入FTP信息就能升级 WordPress 及插件/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1339,11 +1260,17 @@
       
         
           
-            <p>唉，实在受不了budgetvm的网络了，运行还算稳定，果断搬家到Virpus，发篇文章先测试下。</p>
-<p>还有那坑爹的Lumanger，也顺便Goodbye了~</p>
-<p>顺便WordPress也升级的3.5了，还没试出有啥bug~</p>
+          唉，实在受不了budgetvm的网络了，运行还算稳定，果断搬家到Virpus，发篇文章先测试下。
+还有那坑爹的Lumanger，也顺便Goodbye了~
+顺便WordPress也升级的3.5了，还没试出有啥bug~
 
           
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2012/12/27/搬家到Virpus了/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>

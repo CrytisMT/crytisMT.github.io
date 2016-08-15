@@ -286,33 +286,18 @@
       
         
           
-            <p>要把wordpress转到hexo，先从wordpress导出xml，然后用hexo的插件转换，但是文件名乱七八糟的，所以有了下面的python脚本改文件名，不太完美，能用就好。</p>
-<pre><code># 根据title重命名markdown文件
+          要把wordpress转到hexo，先从wordpress导出xml，然后用hexo的插件转换，但是文件名乱七八糟的，所以有了下面的python脚本改文件名，不太完美，能用就好。
+# 根据title重命名markdown文件
 import os
 
-path = &quot;D:\\Tools\\md&quot;
-for md in os.listdir(path):
-try:
-file = open(path + &quot;\\&quot; + md, &quot;r&quot;, encoding=&quot;utf8&quot;)
-lines = file.readlines()
-title = lines[1].replace(&quot;title: &quot;, &quot;&quot;).replace(&quot;\n&quot;, &quot;&quot;) + &quot;.md&quot;
-print(title)
-file.close()
-os.rename(os.path.join(path, md), os.path.join(path, title))
-except OSError:
-print(&quot;error&quot;)
-</code></pre><p>markdown文件格式需要这样的：</p>
-<blockquote>
-<pre><code>---
-title: 775改771，升级CPU好选择
-id: 292
-date: 2013-07-19 20:53:43
-tags:
----
-</code></pre></blockquote>
-<p>第二行title就是文件名。</p>
+path = &quot;D:\\Tools\\md
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/08/14/批量修改Wordpress转hexo-文件名/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -411,11 +396,16 @@ tags:
       
         
           
-            <p>最近准备让博客重新开张了，之前用的一直是WordPress，现在也跟一下潮流，用一下Hexo，部署在github和coding.net上，免费呦，还有独立域名，还可以国内国外分开线路访问。</p>
-<p>后续把之前WordPress的文章迁过来，只是记录知识就好了，不用花哨的功能。</p>
-<p>同时不用之前www.maitaidan.com的域名了，新申请了v2ing.com,就是正在路上的意思吧。</p>
+          最近准备让博客重新开张了，之前用的一直是WordPress，现在也跟一下潮流，用一下Hexo，部署在github和coding.net上，免费呦，还有独立域名，还可以国内国外分开线路访问。
+后续把之前WordPress的文章迁过来，只是记录知识就好了，不用花哨的功能。
+同时不用之前www.maita
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/08/14/hello-hexo/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -514,19 +504,15 @@ tags:
       
         
           
-            <p>貌似现在从Eclipse转移到Intellij IDEA是趋势了。IDEA也有很多跟Eclipse不同的东西，需要手动设置，总结整理一下。</p>
-<p>1.设置字体<span style="color: #232323;">Settings-&gt;Appearance中勾选Override default fonts by (not recommended)，设置Name:NSimSun，Size:12</span></p>
-<p><a href="http://www.maitaidan.com/wp-content/uploads/2014/05/QQ截图20140515231051.png" target="_blank" rel="external"><img src="http://www.maitaidan.com/wp-content/uploads/2014/05/QQ截图20140515231051-300x54.png" alt=""></a></p>
-<p>2.<span style="color: #232323;">让光标不随意定位：Settings-&gt;Editor中去掉Allow placement of caret after end of line。<a href="http://www.maitaidan.com/wp-content/uploads/2014/05/9d6e5b91d585467ea8d50464f0c3b7d6.png" target="_blank" rel="external"><img src="http://www.maitaidan.com/wp-content/uploads/2014/05/9d6e5b91d585467ea8d50464f0c3b7d6-300x123.png" alt=""></a> </span></p>
-<p>3.<span style="color: #232323;">显示行号：Settings-&gt;Editor-&gt;Appearance标签项，勾选Show line numbers。<img src="http://www.maitaidan.com/wp-content/uploads/2014/05/eb725005b1004949934b4b67880ff1d0-300x229.png" alt=""></span></p>
-<p></p>
-<p>4.<span style="color: #232323;">让IntelliJ IDEA启动的时候不打开工程文件：Settings-&gt;General去掉Reopen last project on startup。<a href="http://www.maitaidan.com/wp-content/uploads/2014/05/10913f4d04504dc78f7c49335f79db2a.png" target="_blank" rel="external"><img src="http://www.maitaidan.com/wp-content/uploads/2014/05/10913f4d04504dc78f7c49335f79db2a-300x102.png" alt=""></a></span></p>
-<p>5.<span style="color: #232323;">默认代码提示和补全快捷键跟输入法冲突，如何解决：Settings-&gt;Keymap。<a href="http://www.maitaidan.com/wp-content/uploads/2014/05/054ae594e9e1497791f561360d388bad.png" target="_blank" rel="external"><img src="http://www.maitaidan.com/wp-content/uploads/2014/05/12bedc45dc2242ea8883addb8df62a79-300x88.png" alt=""></a><img src="http://www.maitaidan.com/wp-content/uploads/2014/05/054ae594e9e1497791f561360d388bad-297x300.png" alt=""><img src="http://www.maitaidan.com/wp-content/uploads/2014/05/0297b13c3f2d4aac863ade8d8918ded2.png" alt=""></span></p>
-<p>6.未保存的文件标识出。</p>
-<p><a href="http://www.maitaidan.com/wp-content/uploads/2014/05/小Q截图-20140515233553.png" target="_blank" rel="external"><img src="http://www.maitaidan.com/wp-content/uploads/2014/05/小Q截图-20140515233553-300x175.png" alt=""></a></p>
-<p>7.自动提示不区分大小写。<img src="http://www.maitaidan.com/wp-content/uploads/2014/05/小Q截图-20140515234226-300x53.png" alt=""></p>
+          貌似现在从Eclipse转移到Intellij IDEA是趋势了。IDEA也有很多跟Eclipse不同的东西，需要手动设置，总结整理一下。
+1.设置字体Settings-&gt;Appearance中勾选Override default fonts by (not recommended)，设置Na
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2014/05/15/Intellij IDEA优化设置/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -625,107 +611,16 @@ tags:
       
         
           
-            <p>类似于Linux 下的cal -y的效果。直接贴代码。</p>
-<p><pre class="lang:java decode:true ">import java.io.BufferedReader;<br>import java.io.InputStreamReader;<br>import java.util.GregorianCalendar;</pre></p>
-<p>//输入年份，如2014，打印出该年&lt;span class=’wp_keywordlink_affiliate’&gt;&lt;a href=”<a href="http://www.maitaidan.com/tag/%e4%b8%87%e5%b9%b4%e5%8e%86" target="_blank" rel="external">http://www.maitaidan.com/tag/%e4%b8%87%e5%b9%b4%e5%8e%86</a>“ title=”查看万年历中的全部文章” target=”_blank”&gt;万年历&lt;/a&gt;&lt;/span&gt;，以及标识出当天日期。类似于linux下的cal -y结果。<br>public class Test8 {<br>    //全局常量  今天的日子~<br>    public static final int toYear = new GregorianCalendar().get(GregorianCalendar.YEAR);<br>    public static final int toMonth = new GregorianCalendar().get(GregorianCalendar.MONTH) + 1;<br>    public static final int today = new GregorianCalendar().get(GregorianCalendar.DAY_OF_MONTH);</p>
-<pre><code>public static void main(String[] args) {
-    System.out.println(&quot;请输入年份&quot;);
-    BufferedReader bufr = new BufferedReader(new InputStreamReader(
-            System.in));
-    int year = 0;
-    try {
-        year = Integer.parseInt(bufr.readLine());
-    } catch (Exception e) {
-        e.printStackTrace();
-    }
-    int weekday = firstDay(year);
-    System.out.println(weekday);
+          类似于Linux 下的cal -y的效果。直接贴代码。
+import java.io.BufferedReader;import java.io.InputStreamReader;import java.util.GregorianCalendar;
+//输入年份，如2014，打印出该年&lt;s
+          ...
 
-    // 输出年份
-    System.out.println(&quot;==========&quot; + year + &quot;年&quot; + &quot;==========&quot;);
-    // 输出各个月份
-    weekday = printMonth(year, weekday);
-}
-
-//打印各个月份
-private static int printMonth(int year, int weekday) {
-    for (int DayInMonth = 1; DayInMonth &amp;lt;= 12; DayInMonth++) {
-        printInfo(DayInMonth);
-        //打印每个月前面空着的地方
-        for (int j = 0; j &amp;lt; weekday; j++) {
-            System.out.print(&quot;\t\t&quot;);
-        }
-        for (int day = 1; day &amp;lt;= DayOfMonth(year, DayInMonth); day++) {
-            //判断是否是今天
-            if (year == toYear &amp;amp;&amp;amp; DayInMonth == toMonth &amp;amp;&amp;amp; day == today) {
-                System.out.print(&quot;★&quot; + day + &quot;★&quot; + &quot;\t&quot;);
-            } else {
-                System.out.print(day + &quot;\t\t&quot;);
-            }
-            //★★★每打印一天后，计算第二天是星期几★★★
-            weekday = (weekday + 1) % 7;
-            //是星期天就换行
-            if (weekday == 0) {
-                System.out.println();
-            }
-        }
-        System.out.println();
-        System.out.println(&quot;--------------------------&quot;);
-    }
-    return weekday;
-}
-
-//打印开头的信息
-public static void printInfo(int month) {
-    System.out.println(&quot;【&quot; + month + &quot;月&quot; + &quot;】&quot;);
-    System.out.println(&quot;周日\t周一\t周二\t周三\t周四\t周五\t周六&quot;);
-}
-
-//判断是否是闰年
-public static boolean isLeapYear(int year) {
-    GregorianCalendar gc = new GregorianCalendar();
-    return gc.isLeapYear(year);
-}
-
-// 判断年份的第一天是周几
-public static int firstDay(int year) {
-    long n = (year - 1900 + 1) * 365;
-    for (int i = 1900; i &amp;lt; year; i++) {
-        if (isLeapYear(i)) {
-            n += 1;
-        }
-    }
-    return (int) n % 7;
-}
-
-// 获取每个月的天数
-public static int DayOfMonth(int year, int month) {
-    switch (month) {
-        case 1:
-        case 3:
-        case 5:
-        case 7:
-        case 8:
-        case 10:
-        case 12:
-            return 31;
-        case 4:
-        case 6:
-        case 9:
-        case 11:
-            return 30;
-        case 2:
-            if (isLeapYear(year))// 判断是否是闰年
-                return 29;
-            else
-                return 28;
-        default:
-            return 0;
-    }
-}
-</code></pre><p>}<br>&nbsp;</p>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2014/05/03/Java实现万年历/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -824,99 +719,16 @@ public static int DayOfMonth(int year, int month) {
       
         
           
-            <p>毕设要在Android里使用MysqL数据库,最简单最直接的方法使用jdbc链接。当然，如果是实际开发中肯定不能这样用，因为会暴露数据库用户名和密码，安全性有很大问题，而且速度什么也是个问题。</p>
-<p>Android里面用jdbc和java里面一样用。网上也有很多文章，但我实际结果总是抛出</p>
-<p><pre class="lang:java decode:true ">com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure</pre><br>这样一个异常。这个并不是什么超时不超时的问题。而是Android在后来的版本中限制了主线程的操作，也就是说主线程不能操作网络等，主线程不能被阻塞。</p>
-<p>解决方法有2个：</p>
-<p>1.强制使用主线程：</p>
-<p>在</p>
-<p><pre class="lang:java decode:true ">setContentView(R.layout.activity_login);</pre><br>后加上这几句：</p>
-<p><pre class="lang:java decode:true ">if (android.os.Build.VERSION.SDK_INT &gt; 9) {<br>    StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()<br>                    .permitAll().build();<br>            StrictMode.setThreadPolicy(policy);<br>        }</pre><br>2.当然是使用其他线程了。简单点的可以用AsyncTask，复杂点的用Handler、线程之类的。</p>
-<p>这里贴一个登录界面验证用户名密码的代码：</p>
-<p><pre class="lang:java decode:true ">import java.sql.ResultSet;<br>import java.sql.SQLException;</pre></p>
-<p>import android.os.AsyncTask;<br>import android.os.Bundle;<br>import android.app.Activity;<br>import android.app.ProgressDialog;<br>import android.content.Intent;<br>import android.view.Menu;<br>import android.view.View;<br>import android.view.View.OnClickListener;<br>import android.widget.Button;<br>import android.widget.EditText;</p>
-<p>public class LoginActivity extends Activity {<br>    private Button logButton;<br>    private EditText username;<br>    private EditText password;<br>    private ProgressDialog dialog;<br>    private String passInDB;</p>
-<pre><code>@Override
-protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_login);
+          毕设要在Android里使用MysqL数据库,最简单最直接的方法使用jdbc链接。当然，如果是实际开发中肯定不能这样用，因为会暴露数据库用户名和密码，安全性有很大问题，而且速度什么也是个问题。
+Android里面用jdbc和java里面一样用。网上也有很多文章，但我实际结果总是抛出
+com.mysq
+          ...
 
-    dialog = new ProgressDialog(this);
-    dialog.setTitle(&quot;提示信息&quot;);
-    dialog.setMessage(&quot;正在进行,请稍候....&quot;);
-    // EditText
-    username = (EditText) findViewById(R.id.username);
-    password = (EditText) findViewById(R.id.password);
-    // 按钮
-    logButton = (Button) findViewById(R.id.logButton);
-    logButton.setOnClickListener(new OnClickListener() {
-
-        @Override
-        public void onClick(View v) {
-            //获取输入的用户名
-            String user = username.getText().toString();
-            //执行异步任务
-            new getPass().execute(user);
-        }
-    });
-}
-
-class getPass extends AsyncTask&amp;lt;String, Void, String&amp;gt; {
-    @Override
-    protected String doInBackground(String... params) {
-        String pass = null;
-        ConnectDB conDB = new ConnectDB();
-        ResultSet rs = conDB
-                .getQueryResultSet(&quot;select * from user where username=&apos;&quot;
-                        + params[0] + &quot;&apos;&quot;);
-        if (rs != null) {
-            try {
-                rs.next();
-                pass = rs.getObject(&quot;password&quot;).toString();
-            } catch (SQLException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-        }
-        return pass;
-    }
-
-    @Override
-    protected void onPreExecute() {
-        dialog.show();
-    }
-    //doInBackground执行完后,onPostExecute被ui线程调用
-    @Override
-    protected void onPostExecute(String result) {
-        // TODO Auto-generated method stub
-        super.onPostExecute(result);
-        passInDB = result;
-        String pass = password.getText().toString();
-        // 判断用户名密码是否正确
-        if (passInDB != null &amp;amp;&amp;amp; pass.equals(passInDB)) {
-            Intent intent = new Intent();
-            intent.setClass(LoginActivity.this, MainTab.class);
-            startActivity(intent);
-            finish();
-        } else {
-            DialogTest.builder(LoginActivity.this, &quot;错误&quot;, &quot;用户名密码错误!&quot;);
-            dialog.cancel();
-        }
-    }
-}
-
-@Override
-public boolean onCreateOptionsMenu(Menu menu) {
-    // Inflate the menu; this adds items to the action bar if it is present.
-    getMenuInflater().inflate(R.menu.main, menu);
-    return true;
-}
-</code></pre><p>}<br><br>使用AsyncTask也就是继承AsyncTask，然后覆写下面几个方法：</p>
-<blockquote>
-<p><span style="color: #333333;"> onPreExecute(), 该方法将在执行实际的后台操作前被UI thread调用。可以在该方法中做一些准备工作，如在界面上显示一个进度条。 </span><br><span style="color: #333333;">　　  doInBackground(Params…), 将在onPreExecute 方法执行后马上执行，该方法运行在后台线程中。这里将主要负责执行那些很耗时的后台计算工作。可以调用 publishProgress方法来更新实时的任务进度。该方法是抽象方法，子类必须实现。 </span><br><span style="color: #333333;">　　 </span><span style="color: #333333;"> onPostExecute(Result), 在doInBackground 执行完成后，onPostExecute 方法将被UI thread调用，后台的计算结果将通过该方法传递到UI thread. </span><br>在主线程新建对象然后执行execute()方法即可。</p>
-</blockquote>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2014/05/03/Android 使用JDBC直连MySQL数据库/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1015,9 +827,15 @@ public boolean onCreateOptionsMenu(Menu menu) {
       
         
           
-            <p><pre class="lang:java decode:true ">public static boolean isChinese(char a) {<br>    int v = (int)a;<br>    return (v &gt;= 19968 &amp;&amp; v &lt;= 171941);<br>}</pre><br>额,是不是有点太简单了….</p>
+          public static boolean isChinese(char a) {    int v = (int)a;    return (v &gt;= 19968 &amp;&amp; v &lt;= 171941);}额,是不是有点太简单了….
 
           
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2014/04/13/Java 判断char是否为汉字/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1116,60 +934,18 @@ public boolean onCreateOptionsMenu(Menu menu) {
       
         
           
-            <p>这是更新之前的写法：</p>
-<p><pre class="lang:java decode:true">public class MainActivity extends Activity {<br>    private Button button;</pre></p>
-<pre><code>@Override
-protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
-
-    button=(Button)findViewById(R.id.button);
-    button.setOnClickListener(new OnClickListener() {
-
-        @Override
-        public void onClick(View arg0) {
-            // TODO Auto-generated method stub
-            Intent intent=new Intent();
-            intent.putExtra(&quot;text&quot;, &quot;2ndActivity&quot;);
-            intent.setClass(MainActivity.this,SecondActivity.class);
-            startActivity(intent);
-        }
-    });
-}
-
+          这是更新之前的写法：
+public class MainActivity extends Activity {    private Button button;
 @Override
-public boolean onCreateOptionsMenu(Menu menu) {
-    // Inflate the menu; this adds items to the action bar if it is present.
-    getMenuInflater().inflate(R.menu.main, menu);
-    return true;
-}
-</code></pre><p>}<br>更新之后显然不能这么写了。</p>
-<p><pre class="lang:java decode:true ">    public static class PlaceholderFragment extends Fragment {</pre></p>
-<pre><code>    public PlaceholderFragment() {
-    }
+protected void onCreate(Bundle savedInstanceState) {
+    s
+          ...
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_main, container,
-                false);
-        Button button=(Button)rootView.findViewById(R.id.button);
-        button.setOnClickListener(new OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                Intent intent=new Intent();
-                intent.setClass(getActivity(), SecondActivity.class);
-                startActivity(intent);
-            }
-        });
-        return rootView;
-    }
-}&lt;/pre&gt;
-</code></pre><p>在这里声明button和绑定监听器即可。</p>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2014/04/07/ADT更新setOnClickListener产生空指针异常(NullPointerException)/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1268,9 +1044,15 @@ public boolean onCreateOptionsMenu(Menu menu) {
       
         
           
-            <p>用闲置的域名弄了一个百度贴吧自动签到,地址是www.burstsea.com。有需要的欢迎使用！</p>
+          用闲置的域名弄了一个百度贴吧自动签到,地址是www.burstsea.com。有需要的欢迎使用！
 
           
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2014/03/08/百度贴吧自动签到/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1369,51 +1151,15 @@ public boolean onCreateOptionsMenu(Menu menu) {
       
         
           
-            <p>阿里巴巴2013校园招聘的一道笔试题,CSDN上看到的,觉得很不错,转过来.ps:能进阿里巴巴的果真都是牛人啊,我看的头都大了~~</p>
-<p><pre class="lang:java decode:true">public class InitializeDemo {<br>    private static int k = 1;<br>    private static InitializeDemo t1 = new InitializeDemo(“t1”);<br>    private static InitializeDemo t2 = new InitializeDemo(“t2”);<br>    private static int i = print(“i”);<br>    private static int n = 99;<br>    static {<br>        print(“静态块”);<br>    }<br>    private int j = print(“j”);<br>    {<br>        print(“构造块”);<br>    }</pre></p>
-<pre><code>public InitializeDemo(String str) {
-    System.out.println((k++) + &quot;:&quot; + str + &quot; i=&quot; + i + &quot; n=&quot; + n);
-    ++i;
-    ++n;
-}
+          阿里巴巴2013校园招聘的一道笔试题,CSDN上看到的,觉得很不错,转过来.ps:能进阿里巴巴的果真都是牛人啊,我看的头都大了~~
+public class InitializeDemo {    private static int k = 1;    private static Initial
+          ...
 
-public static int print(String str) {
-    System.out.println((k++) + &quot;:&quot; + str + &quot; i=&quot; + i + &quot; n=&quot; + n);
-    ++n;
-    return ++i;
-}
-
-public static void main(String args[]) {
-    new InitializeDemo(&quot;init&quot;);
-}
-</code></pre><p>}<br>输出结果:</p>
-<p><pre class="lang:java decode:true" title="输出结果">1:j i=0 n=0<br>2:构造块 i=1 n=1<br>3:t1 i=2 n=2<br>4:j i=3 n=3<br>5:构造块 i=4 n=4<br>6:t2 i=5 n=5<br>7:i i=6 n=6<br>8:静态块 i=7 n=99<br>9:j i=8 n=100<br>10:构造块 i=9 n=101<br>11:init i=10 n=102</pre><br><strong>分析:</strong></p>
-<p>核心理念：</p>
-<p>1.静态属性和静态代码块都是在类加载的时候初始化和执行，两者的优先级别是一致的，且高于非静态成员，执行按照编码顺序。</p>
-<p>2.非静态属性和匿名构造器在所有的构造方法之前执行，两者的优先级别一致，执行按照编码顺序。</p>
-<p>3.以上执行完毕后执行构造方法中的代码。</p>
-<p>具体步骤:</p>
-<p>1.运行main方法的时候，JVM会调用ClassLoader来加载Test类，那么一起源于这次加载。</p>
-<p>2.上面有四个静态属性，所以会按顺序逐一初始化这四个静态属性。</p>
-<p>3.private static int k = 1; 此时将k初始化为1。</p>
-<p>4.private static Test t1 = new Test(“t1”);创建Test对象，那么按照核心理念中的顺序，先执行private int j = print(“j”);，打印出j，然后执行构造块，最后执行构造方法。</p>
-<p>5.private static Test t2 = new Test(“t2”);同步骤4。</p>
-<p>6.private static int i = print(“i”);打印i。</p>
-<p>7.private static int n = 99;直到这一步，n才被赋值为99，之前是从默认的0开始++的。</p>
-<p>8.静态属性初始化完毕，代码走到静态块，打印出静态块，此时n=99。</p>
-<p>9.静态属性和静态块执行完毕，然后执行main方法中的代码new Test(“init”);</p>
-<p>10.main方法中创建对象，先初始化非静态属性，private int j = print(“j”);打印j，然后执行构造块，最后执行构造方法。</p>
-<p><strong>用一个公式概括一下Java对象初始化执行优先级别：（静态属性=静态代码块）&gt; （非静态属性 = 构造块）&gt; 构造方法.</strong></p>
-<p>总结一下核心理念：</p>
-<p>1.静态只在类加载的时候执行，且执行一次。</p>
-<p>2.非静态只在实例化的时候执行，且每次实例化都执行。</p>
-<p>3.静态在非静态之前执行。</p>
-<p>4.静态属性和静态块的执行顺序取决于编码顺序，对它们一视同仁。</p>
-<p>5.非静态属性和构造块的执行顺取决于编码顺序，对它们也一视同仁。</p>
-<p>6.最后执行构造方法。</p>
-<p>&nbsp;</p>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2014/02/22/蛋疼的阿里巴巴Java笔试题(附分析)/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1512,22 +1258,19 @@ public static void main(String args[]) {
       
         
           
-            <h2 id="一、普通代码块。"><a href="#一、普通代码块。" class="headerlink" title="一、普通代码块。"></a>一、普通代码块。</h2><pre><code>在一个普通方法中出现的一段代码。如下：
-</code></pre><pre class="lang:java decode:true">public void methodA(){
+          一、普通代码块。在一个普通方法中出现的一段代码。如下：
+public void methodA(){
    System.out.println("Hello Java!我是普通代码块中的内容");//普通代码块
-}</pre>
+}
 
-<h2 id="二、静态代码块。"><a href="#二、静态代码块。" class="headerlink" title="二、静态代码块。"></a>二、静态代码块。</h2><p><span style="text-indent: 2em;">       在一个类里面，前面由关键字static开始，在其后由一对大括号包括起来的内容称之为静态代码块。如下：</span></p>
-<p><pre class="lang:java decode:true">public class A{<br>   static{  //我就是静态代码块<br>      System.out.println(“Hello Java!我是静态代码块中的内容”);<br>   }<br>}</pre><br><span style="color: #333333; font-family: 微软雅黑, Verdana, sans-serif, 宋体; line-height: 23px;">静态代码块，在虚拟机第一次加载该类的时候被执行。主要是对静态属性的初始化，静态代码快只执行一次。</span></p>
-<h2 id="三、构造代码块（非静态代码块）"><a href="#三、构造代码块（非静态代码块）" class="headerlink" title="三、构造代码块（非静态代码块）"></a>三、构造代码块（非静态代码块）</h2><pre><code>在一个类里面，直接由一对大括号包括起来的，没有被任何关键字修饰的代码块被称为构造代码块（也叫非静态代码块），如下：
-</code></pre><p><pre class="lang:java decode:true">public class A{<br>  { //构造代码块<br>    System.out.println(“我是构造代码块，在构造方法调用之前执行”)<br>  }<br>  public A{<br>    System.out.println(“我是构造方法”);<br>  }<br>}</pre><br><span style="color: #333333; font-family: 微软雅黑, Verdana, sans-serif, 宋体; line-height: 23px;">构造代码块在构造方法调用之前被执行，每当创建一个类的实例的时候，构造代码块就会被调用。</span></p>
-<h2 id="四、同步代码块。"><a href="#四、同步代码块。" class="headerlink" title="四、同步代码块。"></a>四、同步代码块。</h2><pre><code>一般使用于多线程环境中。
-</code></pre><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><pre><code>一个对象在创建的时候要经过如下操作
-</code></pre><h3 id="父类静态代码块-gt-子类静态代码块-gt-父类非静态代码块-gt-子类非静态代码块-gt-父类构造方法-gt-子类构造方法"><a href="#父类静态代码块-gt-子类静态代码块-gt-父类非静态代码块-gt-子类非静态代码块-gt-父类构造方法-gt-子类构造方法" class="headerlink" title="     父类静态代码块-&gt;子类静态代码块-&gt;父类非静态代码块-&gt;子类非静态代码块-&gt;父类构造方法-&gt;子类构造方法"></a><span style="padding: 0px; margin: 0px; color: #e53333;">   </span><span style="padding: 0px; margin: 0px; color: #e53333;">  父类静态代码块-&gt;子类静态代码块-&gt;父类非静态代码块-&gt;子类非静态代码块-&gt;父类构造方法-&gt;子类构造方法</span></h3><pre><code>对象的初始化顺序:首先执行父类静态的内容，父类静态的内容执行完毕后，接着去执行子类的静态的内容，当子类的静态内容执行完毕之后，再去看父类有没有非静态代码块，如果有就执行父类的非静态代码块，父类的非静态代码块执行完毕，接着执行父类的构造方法；父类的构造方法执行完毕之后，它接着去看子类有没有非静态代码块，如果有就执行子类的非静态代码块。子类的非静态代码块执行完毕再去执行子类的构造方法。总之一句话，静态代码块内容先执行，接着执行父类非静态代码块和构造方法，然后执行子类非静态代码块和构造方法。
+二、静态代码块。       在一个类里面，前面由关键字static开始，在其后
+          ...
 
-注意:子类的构造方法，不管这个构造方法带不带参数，默认的它都会先去寻找父类的不带参数的构造方法。如果父类没有不带参数的构造方法，那么子类必须用supper关键子来调用父类带参数的构造方法，否则编译不能通过。
-</code></pre>
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2014/02/15/Java四种代码块/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>

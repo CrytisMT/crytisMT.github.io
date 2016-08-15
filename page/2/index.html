@@ -286,19 +286,16 @@
       
         
           
-            <p>虽然说Java在Winform方面很弱势，但是用Swing或Swt做做小程序也挺好玩的。少不了图形化插件的帮忙，ecplise没有自带。之前有不少插件，到现在死的死，收购的收购，剩下没几款。</p>
-<p>1.jigloo</p>
-<p>这个停止更新很久了，布局什么的不咋样，而且events上有bug，不推荐使用。官网：<a href="http://www.cloudgarden.com/jigloo/" target="_blank" rel="external">http://www.cloudgarden.com/jigloo/</a></p>
-<p>2.WindowBuilder</p>
-<p>这个应该是最强大的Gui插件了，前身是SWT-Designer，现在免费了，可以在eclipse里直接在线安装。</p>
-<p>3.JFormDesigner</p>
-<p>这个也很强大。收费的，支持eclipse，idea，netbeans等等。网上有很多注册机。</p>
-<p>在Eclipse下的安装过程，Help–&gt;Install New Software–&gt;Add，点击Add按钮后弹出Add Repository窗口，Name处填JFormDesigner，Location处填<a href="http://download.formdev.com/jformdesigner/eclipse/，点击OK，一路Next即可安装。" target="_blank" rel="external">http://download.formdev.com/jformdesigner/eclipse/，点击OK，一路Next即可安装。</a></p>
-<p>4.netbeans</p>
-<p>这个官方的工具，自带了图形化界面，而且全是中文的，看起来很爽。</p>
-<p>其他还有ve什么的，很老了，没啥意思，要用的话就这几款可以选择。。</p>
-<h3 id="SWT-Designer"><a href="#SWT-Designer" class="headerlink" title="SWT-Designer"></a>SWT-Designer</h3>
-          
+          虽然说Java在Winform方面很弱势，但是用Swing或Swt做做小程序也挺好玩的。少不了图形化插件的帮忙，ecplise没有自带。之前有不少插件，到现在死的死，收购的收购，剩下没几款。
+1.jigloo
+这个停止更新很久了，布局什么的不咋样，而且events上有bug，不推荐使用。官网：htt
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2014/02/10/Java Swing&Swt图形化开发插件/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -397,30 +394,14 @@
       
         
           
-            <p>在使用Java局部内部类或者匿名内部类时，若该类调用了所在方法的局部变量，则该局部变量必须使用final关键字来修饰，否则将会出现编译错误“Cannot refer to a non-final variable * inside an inner class defined in a different method” 下面通过一段代码来演示和分析原因。</p>
-<p><pre class="lang:java decode:true">public class Example {</pre></p>
-<pre><code>public static void main(String args[]) {
-    doSomething();
-}
+          在使用Java局部内部类或者匿名内部类时，若该类调用了所在方法的局部变量，则该局部变量必须使用final关键字来修饰，否则将会出现编译错误“Cannot refer to a non-final variable * inside an inner class defined in a differ
+          ...
 
-private static void doSomething() {
-    final String str1 = &quot;Hello&quot;;
-    // String str2 = &quot;World!&quot;;
-    // 创建一个方法里的局部内部类
-    class Test {
-        public void out() {
-            System.out.println(str1);
-            // System.out.println(str2);
-        }
-    }
-    Test test = new Test();
-    test.out();
-
-}
-</code></pre><p>}<br>上面代码若去掉第9行和第14行的注释符号，则第14行就会给出“Cannot refer to a non-final variable <em> inside an inner class defined in a different method”这样的编译错误。原因如下：<span style="color: #ff0000;"><em>*在方法中定义的变量时局部变量，当方法返回时，局部变量(str1,str2)对应的栈就被回收了，当方法内部类去访问局部变量时就会发生错误。当在变量前加上final时，变量就不在是真的变量了，成了常量，这样在编译器进行编译时(即编译阶段)就会用变量的值来代替变量，这样就不会出现变量清除后，再访问变量的错误。</em></span></em></p>
-<p>更简单的看，匿名内部类中的方法调用了其他方法中的局部变量，所以要变成常量。</p>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2014/02/09/cannot-refer-to-a-non-final-variable-but-inside-an-inner-class-defined-in-a-different-method/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -519,10 +500,15 @@ private static void doSomething() {
       
         
           
-            <p>折腾路由器，买不起屌丝神器4530r就入个屌屌丝神器贝尔rg200e-ca吧，没想到<span style="text-indent: 2em;">中午刚到，刷完了磊科235w的固件，然后手贱升级1.7，果断变砖！灯都不亮。该死的磊科，原来从beta6之后都会升级cfe，盗版机就变砖啊！</span></p>
-<p>没招了，淘一个烙铁、编程器什么的，顺便买几个内存颗粒、闪存，要折腾就折腾到底吧！等我练明白了有变砖的、要升级的欢迎找我！</p>
+          折腾路由器，买不起屌丝神器4530r就入个屌屌丝神器贝尔rg200e-ca吧，没想到中午刚到，刷完了磊科235w的固件，然后手贱升级1.7，果断变砖！灯都不亮。该死的磊科，原来从beta6之后都会升级cfe，盗版机就变砖啊！
+没招了，淘一个烙铁、编程器什么的，顺便买几个内存颗粒、闪存，要折腾就折腾到
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2014/01/12/杯具~路由器变砖/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -621,21 +607,16 @@ private static void doSomething() {
       
         
           
-            <p>话说家里暂时不能多拨了很不爽啊，心有不甘。看到有几个无线信号不错，用了一晚上破解了一个信号最好的（破解具体操作请到本站自行寻找，都是很基础的），准备与家里有线的叠加~</p>
-<p>路由器推荐用openwrt官网上下原版的，需要什么功能自己安装，用网友编译好的不一定有什么问题。</p>
-<p>刷openwrt就不再说了，刷完之后先设置好能上网，然后更新软件包列表，安装<strong>luci-i18n-chinese</strong>，然后语言选择中文。变成中文就舒服多了。</p>
-<p>我叠加用的是mwan3，这个可用软件列表里没有，需要自己下载，我已经把最新的mwan3 1.3-0版本的弄到服务器里，可以直接添加地址下载安装：<a href="http://maitaidan.com/downloads/mwan3_1.3-0_all.ipk">http://maitaidan.com/downloads/mwan3_1.3-0_all.ipk</a>,还有一个luci界面<a href="http://maitaidan.com/downloads/luci-app-mwan3_1.1-14_all.ipk">http://maitaidan.com/downloads/luci-app-mwan3_1.1-14_all.ipk</a>。</p>
-<p>之后在<strong>网络</strong>-<strong>无线</strong>下面搜索wifi，然后加入~在<strong>接口</strong>里删除所有的wan口，分别添加wan1，wan2（名字不能错），这里除了上网方式一个是PPPoe（根据自己的情况）另一个选无线外，防火墙设置还要选一下wan。如图所示：</p>
-<p>[caption id=”” align=”alignnone” width=”640”]<img src="http://pic.yupoo.com/jiangxinyu226/DrJwpKj7/medish.jpg" alt=""> 防火墙设置[/caption]</p>
-<p>到这里差不多完成了，分别连接一下2个wan口，这时mwan里的2个wan应该已经变成ONLINE了：</p>
-<p><img src="http://pic.yupoo.com/jiangxinyu226/DrJzYagX/medish.jpg" alt=""></p>
-<p>这时候叠加已经完成了，看下效果吧，2MB多，差不多之前的2倍（邻居家貌似跟我家一样的网）。</p>
-<p><img src="http://pic.yupoo.com/jiangxinyu226/DrJzYC8o/medish.jpg" alt=""></p>
-<p>现在只叠加了一个无线网，跟之前10拨没法比，但如果路由器支持usb的话，可以用usb hub插多个无线网卡，这样就可以叠加多个无线网，效果还会好一点。</p>
-<p>PS：不会PS，封面图片好蹩脚啊%&gt;_&lt;%</p>
-<p>PS2:如果mwan3里面还是现实OFFLINE，那就在接口那手动连接一下。</p>
+          话说家里暂时不能多拨了很不爽啊，心有不甘。看到有几个无线信号不错，用了一晚上破解了一个信号最好的（破解具体操作请到本站自行寻找，都是很基础的），准备与家里有线的叠加~
+路由器推荐用openwrt官网上下原版的，需要什么功能自己安装，用网友编译好的不一定有什么问题。
+刷openwrt就不再说了，刷完之
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2014/01/08/用路由器有线+无线叠加带宽/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -734,24 +715,15 @@ private static void doSomething() {
       
         
           
-            <p>放假回家了，刚回家几天就有好<span style="text-indent: 2em;">几件郁闷事！一个是发现多拨竟然失效了！目前只能单拨（继续研究），估计是因为之前10拨太嚣张被封杀了~~ 另一个是家里的电脑被我搞坏了，貌似是掉进去个铁片，短路了，然后2个电容爆掉了。懒得折腾了。</span></p>
-<p>今天打算继续弄多拨的，寻思给841n刷个固件，就从论坛上下了一个个人制作的，整合了nwan和mwan3。直接在之前的openwrt里升级，升级之后果断变砖！症状就是电脑获取不到IP，IP是169开头的；没有无线；系统灯一直闪。reset无效。</p>
-<p>本来都放弃了，淘宝上买了ttl，准备开拆了。没想到拆到一半卡住了，死活拆不开。又回头搞，竟然搞好了。下面说一下我的步骤，其中的方法可以每个都试一下。</p>
-<p>1.<span style="color: #ff0000;"><strong>（重要）</strong></span>既然获取不了IP，手动设置IP为192.168.1.101，网关192.168.1.1。</p>
-<p>2.这时候发现ping不通，但是在刚接通电源的几秒内可以ping通。网上不少人也是这种现象。</p>
-<p><a href="http://www.maitaidan.com/wp-content/uploads/2014/01/2.jpg" target="_blank" rel="external"><img src="http://www.maitaidan.com/wp-content/uploads/2014/01/2-300x296.jpg" alt="2"></a></p>
-<p>可以有2个办法进安全模式（这个需要固件刷成功，如果刷坏了没有安全模式）：第一种是在通电的几秒钟可以ping通路由器,然后你去按reset. 我试了下死活都没有进去；第二种在通电等全亮后, 在sys灯两的一瞬间按reset<strong>看到sys灯闪烁后</strong>就算成功了。我用第<span style="text-indent: 2em;">二种方</span>法成功了，系统灯闪的很快，而且一直可以ping通。</p>
-<p>3.这时候就可以Ctrl+C停止ping，telnet 192.168.1.1刷固件了。</p>
-<p>下一个HFS，打开HFS把官方固件拖进去。</p>
-<p><a href="http://www.maitaidan.com/wp-content/uploads/2014/01/QQ截图20140107163833.png" target="_blank" rel="external"><img src="http://www.maitaidan.com/wp-content/uploads/2014/01/QQ截图20140107163833-300x198.png" alt=""></a></p>
-<p>开始菜单 运行CMD ，打开dos界面。输入telnet 192.168.1.1，显示用户名密码 输入 root admin 或者自己的密码登陆成功后cd /tmp切换到路由器的 tmp文件夹下，执行<strong> wget <a href="http://192.168.1.101/wr841nv7.bin" target="_blank" rel="external">http://192.168.1.101/wr841nv7.bin</a></strong>（加重为地址是你自己的IP地址和固件文件名）。执行<strong> mtd -r write wr841nv7.bin firmware。</strong>一开始我刷的是原厂固件，但是提示我<strong>Failed to earse block</strong>，换了openwrt的就好了。<span style="text-indent: 2em;">一分钟左右，telnet 丢失主机。路由器自动重启，久违的TP界面就来了。<a href="http://www.maitaidan.com/wp-content/uploads/2014/01/QQ截图20140107164547.png" target="_blank" rel="external"><img src="http://www.maitaidan.com/wp-content/uploads/2014/01/QQ截图20140107164547-300x201.png" alt=""></a></span></p>
-<p>附其它方法：</p>
-<p>1.30/30/30大法：30/30/30 硬复位【即插电稳定后,按复位键不松开30秒 不松开断电30秒 不松开再插电30秒】以下操作将会清除 NVRAM(非易失性存储器)[1]:</p>
-<p>在插上电源后,稳定的情况下，按住复位键不松开30秒。然后，继续不松开复位键，拔掉电源，持续等30秒。最后，还是继续不松开复位键，插上电源，持续再等30秒后, 才松开.松开30秒后进行一次 拔插 电来结束这次 30/30/30 硬复位操作 - 让它正常开机。这些操作应该在每次升级固件之前和之后都做一次。</p>
-<p>2.ttl线刷：这个我还没尝试过，等以后再坏了的吧。</p>
-<p>&nbsp;</p>
+          放假回家了，刚回家几天就有好几件郁闷事！一个是发现多拨竟然失效了！目前只能单拨（继续研究），估计是因为之前10拨太嚣张被封杀了~~ 另一个是家里的电脑被我搞坏了，貌似是掉进去个铁片，短路了，然后2个电容爆掉了。懒得折腾了。
+今天打算继续弄多拨的，寻思给841n刷个固件，就从论坛上下了一个个人制作的，
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2014/01/07/拯救变砖的TP LINK 841N/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -850,14 +822,17 @@ private static void doSomething() {
       
         
           
-            <p>一个主题看久了，自己也郁闷了。下午花了点时间换了个新主题——HotNewspro。首先在这里感谢主题的作者<a href="http://zmingcx.com/" title="知更鸟" target="_blank" rel="external">知更鸟</a>，免费的主题让大家用。</p>
-<p>新主题看起来不错，功能也比较完善，由之前黑灰的色调换成现在的，眼前一亮啊。</p>
-<p>换主题的时候发现了几个小问题：</p>
-<p>1.更换主题后，竟然没有效果，还是之前的主题。一怒之下删除前主题，页面变成凌乱的空白~！</p>
-<p>原因是因为使用了cost-html-cache，生成了静态的html。在cost-html-cache的设置里删除所有的缓存即可。不得不说这个缓存插件不错，但也有几个小问题，比如自带的搜索失效了，更新上等等。</p>
-<p>2.之前使用Hcms主题WordPress一直检测不到更新，只能升级插件什么的。这次换了主题之后竟然ok了。看来是Hcms主题的问题。顺手升级到了Wordpress3.8，感觉不错，关键是升级的感觉很爽！比起之前自己手动升级。。。。</p>
+          一个主题看久了，自己也郁闷了。下午花了点时间换了个新主题——HotNewspro。首先在这里感谢主题的作者知更鸟，免费的主题让大家用。
+新主题看起来不错，功能也比较完善，由之前黑灰的色调换成现在的，眼前一亮啊。
+换主题的时候发现了几个小问题：
+1.更换主题后，竟然没有效果，还是之前的主题。一怒之下删
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2013/12/24/更换主题--HotNewspro/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -956,41 +931,18 @@ private static void doSomething() {
       
         
           
-            <p>笔试题好考字符串的。</p>
-<p><pre class="lang:java decode:true" title="ReserveString">public class ReverseString {</pre></p>
-<pre><code>public static void main(String[] args) {
+          笔试题好考字符串的。
+public class ReverseString {
+public static void main(String[] args) {
     // TODO Auto-generated method stub
-    String oldString = &quot;abcdefgh&quot;;
-    convert1(oldString);
-    convert2(oldString);
-    convert3(oldString);
-}
+    String oldString = &quot;a
+          ...
 
-public static void convert3(String oldString) {
-    // TODO Auto-generated method stub
-    for (int i = oldString.length() - 1; i &amp;gt;= 0; i--) {
-        System.out.print(oldString.charAt(i));
-    }
-    System.out.println();
-}
-
-public static void convert2(String oldString) {
-    // TODO Auto-generated method stub
-    char[] arr = oldString.toCharArray();
-    for (int i = arr.length - 1; i &amp;gt;= 0; i--) {
-        System.out.print(arr[i]);
-    }
-    System.out.println();
-}
-
-public static void convert1(String oldString) {//用了StringBuffer的reverse()方法
-    // TODO Auto-generated method stub
-    StringBuffer temp = new StringBuffer(oldString);
-    System.out.println(temp.reverse());
-}
-</code></pre><p>}<br>&nbsp;</p>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2013/12/23/Java字符串反转的三种实现方法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1089,11 +1041,15 @@ public static void convert1(String oldString) {//用了StringBuffer的reverse()�
       
         
           
-            <p>话说好久没有上来看下博客了，更别说更新了。最近的所有时间几乎都用在找工作上了，应届毕业生啊。秋季招聘已经接近尾声，过程中屡面屡败，屡败屡面，虽然现在已经签了，但心里还是不太满意，能去一个互联网公司更好的啦~~</p>
-<p>现在我才感觉到必须要有真才实学，所以接下来的日子也是不断学习吧。不学C、C++了，改学JAVA，再涉及点Linux、PHP、CSS之类。以后更新就多记录点学习的历程，必须要加紧了，明年春季招聘再战！！</p>
-<p>学校的网不知道又咋了，博客打开慢的要命，唉~</p>
+          话说好久没有上来看下博客了，更别说更新了。最近的所有时间几乎都用在找工作上了，应届毕业生啊。秋季招聘已经接近尾声，过程中屡面屡败，屡败屡面，虽然现在已经签了，但心里还是不太满意，能去一个互联网公司更好的啦~~
+现在我才感觉到必须要有真才实学，所以接下来的日子也是不断学习吧。不学C、C++了，改学JA
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2013/11/07/留下点痕迹/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1192,21 +1148,14 @@ public static void convert1(String oldString) {//用了StringBuffer的reverse()�
       
         
           
-            <p>放假回家之后，发现网速升级了，变成10Mb上下对等，用弄了一下多拨，现在下载可以达到10MB/s。可惜电脑不太给力了，记得是初中毕业的时候升级的电脑，e4400+富士康G33+9800gt主板，现在玩lol都力不从心。按理说9800gt玩lol是毫无压力，1080p全高可以稳定60帧。看来cpu是瓶颈，而且cpu空闲温度一直70多，满载更是95左右。花大价钱把全套都换了确实没必要，在家没几天时间，把775改771，换xeon倒是个不错的办法。</p>
-<p>其实775改771很简单，只需要把2个防呆口减掉就可以了。具体教程这里有：<a href="http://diy.pconline.com.cn/324/3241967_all.html" target="_blank" rel="external">300元升级神器？至强 E5450超值四核评测</a></p>
-<p>到淘宝上淘一个e5450（据说E0步进的比C0步进的好超，外频能上400），让卖家帮忙贴好“护舒宝”，回来装上即可。又顺便买了个冰凌旗舰版和一点硅脂，把显卡的硅脂也换了。</p>
-<p>我的主板是富士康G33，安装好之后直接点亮，并不需要修改bios加微代码，总之用最新的bios最好。</p>
-<p>现在果然感觉鸟枪换炮，lol帧数有大幅提高。上几张图吧：</p>
-<p>CPU的信息，没超频</p>
-<p><img src="http://pic.yupoo.com/jiangxinyu226/D1qeVmuR/medish.jpg" alt="" title="CPU的信息，没超频"></p>
-<p>温度现在还算正常</p>
-<p><img src="http://pic.yupoo.com/jiangxinyu226/D1qeVOyI/medish.jpg" alt=""> </p>
-<p>象棋8000多，艹一下能到10000左右</p>
-<p><img src="http://pic.yupoo.com/jiangxinyu226/D1qeUZcE/medish.jpg" alt=""></p>
-<p>总体性能在i3 2102之上，比什么G2020强多了。</p>
-<p>现在流行的廉价升级方案不少，如果有x58板子的话，可以用L5520，跟E3 1230性能差不多；还可以h55+i7 870，性能也不错，也只需七八百左右，合算。</p>
+          放假回家之后，发现网速升级了，变成10Mb上下对等，用弄了一下多拨，现在下载可以达到10MB/s。可惜电脑不太给力了，记得是初中毕业的时候升级的电脑，e4400+富士康G33+9800gt主板，现在玩lol都力不从心。按理说9800gt玩lol是毫无压力，1080p全高可以稳定60帧。看来cpu是瓶
+          ...
 
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2013/07/19/775改771，升级CPU好选择/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1305,25 +1254,18 @@ public static void convert1(String oldString) {//用了StringBuffer的reverse()�
       
         
           
-            <p>由于某些需要需要来回切换IP，之前找了几个修改IP的软件，总有些bug，其实一想，还不如用批处理来的快捷方便。下面提供2个批处理用来切换、修改IP。</p>
-<p>1.这个批处理可以在两个或多个IP、掩码、网关之间选择切换，没有加入dns的修改，有需要的可以自行添加。代码都很简单，一看就能懂。</p>
-<p>上个效果图：</p>
-<p><img src="http://pic.yupoo.com/jiangxinyu226/CVEVTV4f/medish.jpg" alt=""></p>
-<p><pre class="lang:default decode:true">@echo off<br>color 0a<br>title IP切换脚本 麦钛蛋www.maitaidan.com<br>:start<br>@echo —————修改切换IP by麦钛蛋——————<br>@echo 请选择ip:<br>@echo 1.校园网<br>@echo 2.台式机<br>@echo —————www.maitaidan.com——————<br>set /p sLocal=请选择:<br>if %sLocal%==1 goto home<br>if %sLocal%==2 goto office<br>cls<br>@echo 选择错误，请重新选择<br>goto start<br>:home<br>@echo 正在设置<br>netsh interface ip set address 本地连接 static 8.8.8.8 255.255.255.0 8.8.8.254 1<br>goto end<br>:office<br>@echo 正在设置网络连接为192.168.137.2<br>netsh interface ip set address 本地连接 static 192.168.137.2 255.255.255.0 192.168.137.1<br>:end<br>echo 设置完成，自动退出</pre><br>2.第二个批处理可以智能在两个IP之间切换，如果当前是这个IP，则切换为另外一个。</p>
-<p><a href="http://pic.yupoo.com/jiangxinyu226/CVEVVgVz/medish.jpg" target="_blank" rel="external"><img src="http://pic.yupoo.com/jiangxinyu226/CVEVVgVz/medish.jpg" alt=""></a></p>
-<p>&nbsp;</p>
-<p><pre class="lang:default decode:true ">@echo off &amp;setlocal enabledelayedexpansion<br>title IP智能切换脚本 麦钛蛋www.maitaidan.com<br>color e<br>Rem ‘/<em>========获取本机的IP地址(局域网)=========</em>/<br>echo 正在获取本机的IP地址，请稍等…<br>for /f “tokens=3 skip=2 delims=: “ %%i in (‘nbtstat -n’) do (<br>set “IP_addr=%%i”<br>set IP_addr=!IP_addr:~1,-1!<br>goto :next<br>)</pre></p>
-<p>:next</p>
-<p>for /f “tokens=2 delims=:” %%b in (‘ipconfig^|find /i “ip”‘) do set fsip=%%b<br>echo 当前IP：%fsip%<br>Set fsip=%fsip: =%</p>
-<p>echo ——– ip修改中,请稍后… ———  </p>
-<p>Rem ‘/<em>=========判断当前IP=============</em>/<br>if %fsip%==192.168.137.2 (  </p>
-<p>Rem ‘/<em>=========设为家中IP=============</em>/<br>netsh interface ip set address 本地连接 static 8.8.8.8 255.255.255.0 8.8.8.254 1</p>
-<p>) ELSE (  </p>
-<p>Rem ‘/<em>=========设为单位IP=============</em>/<br>netsh interface ip set address 本地连接 static 192.168.137.2 255.255.255.0 192.168.137.1 1</p>
-<p>) </p>
-<p>ECHO ——– ip修改完成 ——–<br>ECHO —— 麦钛蛋www.maitaidan.com ——<br>pause<br>两个都不错，哈哈。</p>
+          由于某些需要需要来回切换IP，之前找了几个修改IP的软件，总有些bug，其实一想，还不如用批处理来的快捷方便。下面提供2个批处理用来切换、修改IP。
+1.这个批处理可以在两个或多个IP、掩码、网关之间选择切换，没有加入dns的修改，有需要的可以自行添加。代码都很简单，一看就能懂。
+上个效果图：
 
-          
+@
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2013/06/11/批处理一键切换、修改IP/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
